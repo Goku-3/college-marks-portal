@@ -112,71 +112,66 @@ export default function Home() {
     setLoading(true);
     setError("");
 
-    const [semesterResult, subjectResult] =
-      await Promise.all([
-        supabase
+    try {
+      // The parent table for subjects.semester_id is public."Semesters".
+      // Always obtain the real UUID from that table.
+      const { data: semesterData, error: semesterError } =
+        await supabase
           .from("Semesters")
-          .select("*")
-          .order("semester_name"),
+          .select("id, semester_name, academic_year")
+          .order("semester_name");
 
-        supabase
+      if (semesterError) {
+        setSemesters([]);
+        setSubjects([]);
+        setSemesterId("");
+        setError(`Could not load semesters: ${semesterError.message}`);
+        return;
+      }
+
+      const loadedSemesters = (semesterData ?? []) as Semester[];
+      setSemesters(loadedSemesters);
+
+      const e2Semester = loadedSemesters.find(
+        (semester) =>
+          semester.semester_name.trim().toLowerCase() === "e2 sem-1"
+      );
+
+      if (!e2Semester) {
+        setSemesterId("");
+        setSubjects([]);
+        setError(
+          'E2 Sem-1 was not found in public."Semesters". Add it first.'
+        );
+        return;
+      }
+
+      // This exact UUID is the value that must be stored in
+      // subjects.semester_id.
+      setSemesterId(e2Semester.id);
+
+      const { data: subjectData, error: subjectError } =
+        await supabase
           .from("subjects")
           .select("*")
-          .order("subject_name"),
-      ]);
+          .eq("semester_id", e2Semester.id)
+          .order("subject_name");
 
-    const loadedSubjects =
-      (subjectResult.data ?? []) as Subject[];
-
-    setSubjects(loadedSubjects);
-
-    if (subjectResult.error) {
-      setError(subjectResult.error.message);
-      setLoading(false);
-      return;
-    }
-
-    let loadedSemesters =
-      (semesterResult.data ?? []) as Semester[];
-
-    // Prefer E2 Sem-1. If the semester list is empty but subjects
-    // contain a real semester UUID, use that UUID as a fallback.
-    if (
-      semesterResult.error ||
-      loadedSemesters.length === 0
-    ) {
-      const inferredSemesterId =
-        loadedSubjects.find(
-          (subject) => !!subject.semester_id
-        )?.semester_id;
-
-      if (inferredSemesterId) {
-        loadedSemesters = [
-          {
-            id: inferredSemesterId,
-            semester_name: "E2 Sem-1",
-            academic_year: null,
-          },
-        ];
+      if (subjectError) {
+        setSubjects([]);
+        setError(
+          `Could not load E2 Sem-1 subjects: ${subjectError.message}`
+        );
+        return;
       }
+
+      setSubjects((subjectData ?? []) as Subject[]);
+    } catch (err) {
+      console.error("Portal loading failed:", err);
+      setError("Could not connect to the database while loading the portal.");
+    } finally {
+      setLoading(false);
     }
-
-    setSemesters(loadedSemesters);
-
-    const e2Semester = loadedSemesters.find(
-      (semester) =>
-        semester.semester_name
-          .trim()
-          .toLowerCase() === "e2 sem-1"
-    );
-
-    if (e2Semester) {
-      setSemesterId(e2Semester.id);
-    } else if (loadedSemesters.length > 0) {
-      setSemesterId(loadedSemesters[0].id);
-    }
-
-    setLoading(false);
   }
 
   useEffect(() => {
@@ -394,10 +389,9 @@ export default function Home() {
       const formData =
         new FormData();
 
-      formData.append(
-        "file",
-        file
-      );
+      formData.append("file", file);
+      formData.append("semester_id", semesterId);
+      formData.append("exam_type", examType);
 
       const response =
         await fetch(
@@ -440,10 +434,12 @@ export default function Home() {
 
       await loadPortal();
     } catch (err) {
-      console.error(err);
+      console.error("Upload request failed:", err);
 
       setError(
-        "Could not connect to upload API."
+        err instanceof Error
+          ? err.message
+          : "Could not connect to upload API."
       );
     } finally {
       setUploading(false);
@@ -785,37 +781,25 @@ export default function Home() {
                 <select
                   value={semesterId}
                   onChange={(event) =>
-                    setSemesterId(
-                      event.target.value
-                    )
+                    setSemesterId(event.target.value)
                   }
+                  disabled={loading || semesters.length === 0}
                 >
-                  {semesters.length > 0 ? (
-                    semesters.map(
-                      (semester) => (
-                        <option
-                          key={semester.id}
-                          value={semester.id}
-                        >
-                          {semester.semester_name
-                            .trim()
-                            .toLowerCase() ===
-                          "e2 sem-1"
-                            ? "E2 Sem-1"
-                            : semester.semester_name}
-                          {semester.academic_year &&
-                          semester.semester_name
-                            .trim()
-                            .toLowerCase() !==
-                            "e2 sem-1"
-                            ? ` — ${semester.academic_year}`
-                            : ""}
-                        </option>
-                      )
-                    )
-                  ) : (
+                  {semesters.map((semester) => (
+                    <option key={semester.id} value={semester.id}>
+                      {semester.semester_name.trim().toLowerCase() === "e2 sem-1"
+                        ? "E2 Sem-1"
+                        : semester.semester_name}
+                      {semester.academic_year &&
+                      semester.semester_name.trim().toLowerCase() !== "e2 sem-1"
+                        ? ` — ${semester.academic_year}`
+                        : ""}
+                    </option>
+                  ))}
+
+                  {semesters.length === 0 && (
                     <option value="">
-                      E2 Sem-1
+                      {loading ? "Loading semester..." : "E2 Sem-1 not found"}
                     </option>
                   )}
                 </select>
@@ -860,7 +844,8 @@ export default function Home() {
                 }
                 disabled={
                   searching ||
-                  loading
+                  loading ||
+                  !semesterId
                 }
               >
 
@@ -1139,6 +1124,13 @@ export default function Home() {
                               key={
                                 subject.id
                               }
+                              className={
+                                mark?.attendance_status?.toUpperCase() ===
+                                  "PRESENT" &&
+                                typeof mark.marks === "number"
+                                  ? "has-mark"
+                                  : ""
+                              }
                             >
 
                               <td>
@@ -1275,7 +1267,9 @@ export default function Home() {
                       type="file"
                       accept=".xlsx"
                       disabled={
-                        uploading
+                        uploading ||
+                        loading ||
+                        !semesterId
                       }
                       onChange={
                         uploadExcel
@@ -2078,27 +2072,42 @@ export default function Home() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-width: 86px;
-          padding: 10px 14px;
-          border-radius: 9px;
-          background: #dce9ff;
-          color: #1757d2;
-          border: 1px solid #b9d0ff;
-          font-size: 14px;
-          font-weight: 800;
+          min-width: 112px;
+          min-height: 42px;
+          padding: 10px 16px;
+          border-radius: 11px;
+          background: #cfe0ff;
+          color: #124bb8;
+          border: 2px solid #8fb4ff;
+          font-size: 16px;
+          font-weight: 900;
           letter-spacing: 0.2px;
           box-shadow:
-            0 5px 14px
+            0 7px 18px
               rgba(
                 40,
                 100,
                 232,
-                0.14
+                0.22
               );
         }
 
         .marks-card tbody tr:hover {
           background: #f8fbff;
+        }
+
+        .marks-card tbody tr.has-mark {
+          background: #fbfdff;
+        }
+
+        .marks-card tbody tr.has-mark td:first-child strong {
+          color: #123f91;
+          font-weight: 800;
+        }
+
+        .marks-card tbody tr.has-mark td:last-child {
+          padding-top: 14px;
+          padding-bottom: 14px;
         }
 
         .absent {

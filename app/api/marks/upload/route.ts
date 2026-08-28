@@ -99,6 +99,11 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const file = formData.get("file");
 
+    // page.tsx sends the exact UUID selected from public."Semesters".
+    // Never invent/infer a semester UUID when creating a subject.
+    const requestedSemesterId = clean(formData.get("semester_id"));
+    const requestedExamType = clean(formData.get("exam_type"));
+
     if (!(file instanceof File)) {
       return NextResponse.json(
         {
@@ -239,7 +244,14 @@ export async function POST(request: NextRequest) {
     // Your uploaded file has exactly one marks column:
     // MID-1(20), for the subject Probability and Random variables.
     const markHeader = markHeaders[0];
-    const examType = detectExamType(markHeader);
+    const detectedExamType = detectExamType(markHeader);
+    const allowedExamTypes = new Set(["MID 1", "MID 2", "MID 3"]);
+
+    const examType =
+      requestedExamType &&
+      allowedExamTypes.has(requestedExamType.toUpperCase())
+        ? requestedExamType.toUpperCase()
+        : detectedExamType;
 
     // Use the filename as the subject name, removing the .xlsx extension.
     // Example:
@@ -256,13 +268,27 @@ export async function POST(request: NextRequest) {
 
     const supabase = createAdminClient();
 
-    // E2 Sem-1 is the current portal semester.
+    // IMPORTANT:
+    // The FK reported by Supabase is:
+    // subjects.semester_id -> public."Semesters".id
+    //
+    // Use the exact quoted table name. Prefer the semester UUID sent by
+    // page.tsx, then verify that UUID really exists in "Semesters".
+    let semesterQuery = supabase
+      .from("Semesters")
+      .select("id, semester_name");
+
+    if (requestedSemesterId) {
+      semesterQuery = semesterQuery.eq("id", requestedSemesterId);
+    } else {
+      semesterQuery = semesterQuery.ilike(
+        "semester_name",
+        "E2 Sem-1"
+      );
+    }
+
     const { data: semester, error: semesterError } =
-      await supabase
-        .from("semesters")
-        .select("id, semester_name")
-        .ilike("semester_name", "E2 Sem-1")
-        .maybeSingle();
+      await semesterQuery.maybeSingle();
 
     if (semesterError) {
       console.error(
@@ -273,7 +299,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: `Could not find E2 Sem-1: ${semesterError.message}`,
+          error:
+            `Could not read public."Semesters": ${semesterError.message}`,
         },
         { status: 500 }
       );
@@ -283,14 +310,30 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error:
-            'Semester "E2 Sem-1" was not found in the database.',
+          error: requestedSemesterId
+            ? `The selected semester UUID does not exist in public."Semesters": ${requestedSemesterId}`
+            : 'Semester "E2 Sem-1" was not found in public."Semesters".',
         },
         { status: 404 }
       );
     }
 
-    // Find or create the subject for E2 Sem-1.
+    // Only accept the selected semester; don't silently switch to another one.
+    if (
+      requestedSemesterId &&
+      semester.id !== requestedSemesterId
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "The selected semester could not be verified.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // Find or create the subject under the verified semester UUID.
+    // This is the value that satisfies subjects_semester_id_fkey.
     let { data: subject, error: subjectLookupError } =
       await supabase
         .from("subjects")
@@ -311,6 +354,18 @@ export async function POST(request: NextRequest) {
           error: `Could not read subjects: ${subjectLookupError.message}`,
         },
         { status: 500 }
+      );
+    }
+
+    if (subject && subject.semester_id !== semester.id) {
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "The existing subject belongs to a different semester. " +
+            "No marks were uploaded.",
+        },
+        { status: 409 }
       );
     }
 
@@ -609,7 +664,7 @@ export async function POST(request: NextRequest) {
       success: true,
       message: `Successfully uploaded ${uploadedMarks} marks for ${subjectName}.`,
       subject: subjectName,
-      semester: "E2 Sem-1",
+      semester: semester.semester_name,
       examType,
       studentsProcessed: matchedRows.length,
       uploadedMarks,
