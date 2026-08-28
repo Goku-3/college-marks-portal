@@ -115,7 +115,7 @@ export default function Home() {
     const [semesterResult, subjectResult] =
       await Promise.all([
         supabase
-          .from("semesters")
+          .from("Semesters")
           .select("*")
           .order("semester_name"),
 
