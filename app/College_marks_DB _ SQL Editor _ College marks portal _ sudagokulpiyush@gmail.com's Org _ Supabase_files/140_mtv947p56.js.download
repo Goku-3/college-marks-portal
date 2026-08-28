@@ -1,0 +1,516 @@
+;!function(){try { var e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof global?global:"undefined"!=typeof window?window:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&((e._debugIds|| (e._debugIds={}))[n]="94db9584-3427-de89-9e34-8b047da51bb7")}catch(e){}}();
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,487362,e=>{"use strict";var t=e.i(416340),s=e.i(95840),a=e.i(13900),r=e.i(877260),i=e.i(97999),n=e.i(982635),l=e.i(121873),o=e.i(297504),c=e.i(614501),u=["x1","y1","x2","y2","key"],m=["offset"];function d(e){return(d="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function h(e,t){var s=Object.keys(e);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);t&&(a=a.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),s.push.apply(s,a)}return s}function p(e){for(var t=1;t<arguments.length;t++){var s=null!=arguments[t]?arguments[t]:{};t%2?h(Object(s),!0).forEach(function(t){var a,r,i;a=e,r=t,i=s[t],(r=function(e){var t=function(e,t){if("object"!=d(e)||!e)return e;var s=e[Symbol.toPrimitive];if(void 0!==s){var a=s.call(e,t||"default");if("object"!=d(a))return a;throw TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==d(t)?t:t+""}(r))in a?Object.defineProperty(a,r,{value:i,enumerable:!0,configurable:!0,writable:!0}):a[r]=i}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(s)):h(Object(s)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(s,t))})}return e}function f(){return(f=Object.assign.bind()).apply(this,arguments)}function _(e,t){if(null==e)return{};var s,a,r=function(e,t){if(null==e)return{};var s={};for(var a in e)if(Object.prototype.hasOwnProperty.call(e,a)){if(t.indexOf(a)>=0)continue;s[a]=e[a]}return s}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(a=0;a<i.length;a++)s=i[a],!(t.indexOf(s)>=0)&&Object.prototype.propertyIsEnumerable.call(e,s)&&(r[s]=e[s])}return r}var g=function(e){var s=e.fill;if(!s||"none"===s)return null;var a=e.fillOpacity,r=e.x,i=e.y,n=e.width,l=e.height,o=e.ry;return t.default.createElement("rect",{x:r,y:i,ry:o,width:n,height:l,stroke:"none",fill:s,fillOpacity:a,className:"recharts-cartesian-grid-bg"})};function y(e,a){var r;if(t.default.isValidElement(e))r=t.default.cloneElement(e,a);else if((0,s.default)(e))r=e(a);else{var n=a.x1,l=a.y1,o=a.x2,c=a.y2,d=a.key,h=_(a,u),p=(0,i.filterProps)(h,!1),g=(p.offset,_(p,m));r=t.default.createElement("line",f({},g,{x1:n,y1:l,x2:o,y2:c,fill:"none",key:d}))}return r}function v(e){var s=e.x,a=e.width,r=e.horizontal,i=void 0===r||r,n=e.horizontalPoints;if(!i||!n||!n.length)return null;var l=n.map(function(t,r){return y(i,p(p({},e),{},{x1:s,y1:t,x2:s+a,y2:t,key:"line-".concat(r),index:r}))});return t.default.createElement("g",{className:"recharts-cartesian-grid-horizontal"},l)}function b(e){var s=e.y,a=e.height,r=e.vertical,i=void 0===r||r,n=e.verticalPoints;if(!i||!n||!n.length)return null;var l=n.map(function(t,r){return y(i,p(p({},e),{},{x1:t,y1:s,x2:t,y2:s+a,key:"line-".concat(r),index:r}))});return t.default.createElement("g",{className:"recharts-cartesian-grid-vertical"},l)}function S(e){var s=e.horizontalFill,a=e.fillOpacity,r=e.x,i=e.y,n=e.width,l=e.height,o=e.horizontalPoints,c=e.horizontal;if(!(void 0===c||c)||!s||!s.length)return null;var u=o.map(function(e){return Math.round(e+i-i)}).sort(function(e,t){return e-t});i!==u[0]&&u.unshift(0);var m=u.map(function(e,o){var c=u[o+1]?u[o+1]-e:i+l-e;if(c<=0)return null;var m=o%s.length;return t.default.createElement("rect",{key:"react-".concat(o),y:e,x:r,height:c,width:n,stroke:"none",fill:s[m],fillOpacity:a,className:"recharts-cartesian-grid-bg"})});return t.default.createElement("g",{className:"recharts-cartesian-gridstripes-horizontal"},m)}function x(e){var s=e.vertical,a=e.verticalFill,r=e.fillOpacity,i=e.x,n=e.y,l=e.width,o=e.height,c=e.verticalPoints;if(!(void 0===s||s)||!a||!a.length)return null;var u=c.map(function(e){return Math.round(e+i-i)}).sort(function(e,t){return e-t});i!==u[0]&&u.unshift(0);var m=u.map(function(e,s){var c=u[s+1]?u[s+1]-e:i+l-e;if(c<=0)return null;var m=s%a.length;return t.default.createElement("rect",{key:"react-".concat(s),x:e,y:n,width:c,height:o,stroke:"none",fill:a[m],fillOpacity:r,className:"recharts-cartesian-grid-bg"})});return t.default.createElement("g",{className:"recharts-cartesian-gridstripes-vertical"},m)}var j=function(e,t){var s=e.xAxis,a=e.width,r=e.height,i=e.offset;return(0,n.getCoordinatesOfGrid)((0,l.getTicks)(p(p(p({},o.CartesianAxis.defaultProps),s),{},{ticks:(0,n.getTicksOfAxis)(s,!0),viewBox:{x:0,y:0,width:a,height:r}})),i.left,i.left+i.width,t)},k=function(e,t){var s=e.yAxis,a=e.width,r=e.height,i=e.offset;return(0,n.getCoordinatesOfGrid)((0,l.getTicks)(p(p(p({},o.CartesianAxis.defaultProps),s),{},{ticks:(0,n.getTicksOfAxis)(s,!0),viewBox:{x:0,y:0,width:a,height:r}})),i.top,i.top+i.height,t)},q=[],w=[];function P(e){var i,n,l,o,u,m,h=(0,c.useChartWidth)(),_=(0,c.useChartHeight)(),y=(0,c.useOffset)(),P=p(p({},e),{},{stroke:null!=(i=e.stroke)?i:"#ccc",fill:null!=(n=e.fill)?n:"none",horizontal:null==(l=e.horizontal)||l,horizontalFill:null!=(o=e.horizontalFill)?o:w,vertical:null==(u=e.vertical)||u,verticalFill:null!=(m=e.verticalFill)?m:q,x:(0,r.isNumber)(e.x)?e.x:y.left,y:(0,r.isNumber)(e.y)?e.y:y.top,width:(0,r.isNumber)(e.width)?e.width:y.width,height:(0,r.isNumber)(e.height)?e.height:y.height}),E=P.x,N=P.y,T=P.width,O=P.height,A=P.syncWithTicks,L=P.horizontalValues,C=P.verticalValues,R=(0,c.useArbitraryXAxis)(),I=(0,c.useYAxisWithFiniteDomainOrRandom)();if(!(0,r.isNumber)(T)||T<=0||!(0,r.isNumber)(O)||O<=0||!(0,r.isNumber)(E)||E!==+E||!(0,r.isNumber)(N)||N!==+N)return null;var $=P.verticalCoordinatesGenerator||j,D=P.horizontalCoordinatesGenerator||k,M=P.horizontalPoints,z=P.verticalPoints;if((!M||!M.length)&&(0,s.default)(D)){var H=L&&L.length,F=D({yAxis:I?p(p({},I),{},{ticks:H?L:I.ticks}):void 0,width:h,height:_,offset:y},!!H||A);(0,a.warn)(Array.isArray(F),"horizontalCoordinatesGenerator should return Array but instead it returned [".concat(d(F),"]")),Array.isArray(F)&&(M=F)}if((!z||!z.length)&&(0,s.default)($)){var U=C&&C.length,B=$({xAxis:R?p(p({},R),{},{ticks:U?C:R.ticks}):void 0,width:h,height:_,offset:y},!!U||A);(0,a.warn)(Array.isArray(B),"verticalCoordinatesGenerator should return Array but instead it returned [".concat(d(B),"]")),Array.isArray(B)&&(z=B)}return t.default.createElement("g",{className:"recharts-cartesian-grid"},t.default.createElement(g,{fill:P.fill,fillOpacity:P.fillOpacity,x:P.x,y:P.y,width:P.width,height:P.height,ry:P.ry}),t.default.createElement(v,f({},P,{offset:y,horizontalPoints:M,xAxis:R,yAxis:I})),t.default.createElement(b,f({},P,{offset:y,verticalPoints:z,xAxis:R,yAxis:I})),t.default.createElement(S,f({},P,{horizontalPoints:M})),t.default.createElement(x,f({},P,{verticalPoints:z})))}P.displayName="CartesianGrid",e.s(["CartesianGrid",0,P])},902780,e=>{"use strict";var t=e.i(221628),s=e.i(640040),a=e.i(837710),r=e.i(843778),i=e.i(911735);e.s(["UnknownInterface",0,({urlBack:e,fullHeight:n=!0})=>(0,t.jsx)("div",{className:(0,r.cn)("w-full flex items-center justify-center",n&&"h-full"),children:(0,t.jsx)(i.Admonition,{type:"note",className:"max-w-xl",title:"Looking for something?",description:"We couldn't find the page that you're looking for",children:(0,t.jsx)(a.Button,{asChild:!0,variant:"default",className:"mt-2",children:(0,t.jsx)(s.default,{href:e,children:"Head back"})})})})])},192451,e=>{"use strict";var t=e.i(221628),s=e.i(350362),a=e.i(588264),r=e.i(416340),i=e.i(843778);let n=r.forwardRef(({className:e,...s},r)=>(0,t.jsx)(a.RadioGroup.Root,{className:(0,i.cn)("relative grid gap-2",e),...s,ref:r}));n.displayName=a.RadioGroup.Root.displayName;let l=r.forwardRef(({className:e,children:r,...n},l)=>(0,t.jsx)(a.RadioGroup.Item,{ref:l,className:(0,i.cn)("relative aspect-square h-4 w-4 rounded-full border border-primary text-primary focus-ring disabled:cursor-not-allowed disabled:opacity-50",e),...n,children:(0,t.jsx)(a.RadioGroup.Indicator,{className:"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",children:(0,t.jsx)(s.Circle,{size:10,strokeWidth:0,className:"fill-current text-current"})})}));l.displayName=a.RadioGroup.Item.displayName;let o=r.forwardRef(({image:e,label:s,showIndicator:r=!0,...n},l)=>(0,t.jsxs)(a.RadioGroup.Item,{ref:l,...n,className:(0,i.cn)("flex flex-col gap-2","w-48","bg-surface-200","rounded-md border border-strong","p-2","shadow-xs","hover:border-control-hover focus-visible:border-control-hover hover:bg-surface-300","data-[state=checked]:bg-selection data-[state=checked]:border-control-hover","transition-colors","group",n.className),children:[n.children,(0,t.jsxs)("div",{className:"flex gap-2 w-full",children:[r&&(0,t.jsxs)("div",{className:"relative w-3 h-3 min-w-3 mt-0.5",children:[(0,t.jsx)(a.RadioGroup.Indicator,{className:(0,i.cn)("absolute","w-[10px] h-[10px]","left-px top-px","border border-background-surface-300","rounded-full","data-[state=checked]:border-background-surface-300","data-[state=checked]:ring-foreground","data-[state=checked]:bg-foreground")}),(0,t.jsx)("div",{className:(0,i.cn)("absolute","w-3 h-3","border border-stronger","rounded-full","group-hover:border-control-hover","group-focus-visible:border-control-hover","group-data-[state=checked]:border-control-hover","transition-colors")})]}),(0,t.jsx)("label",{htmlFor:n.value,className:(0,i.cn)("text-xs transition-colors text-left","text-light","group-hover:text-foreground group-data-[state=checked]:text-foreground",n.disabled?"cursor-not-allowed":"cursor-pointer"),children:s})]})]}));o.displayName=a.RadioGroup.Item.displayName,e.s(["RadioGroup",0,n,"RadioGroupItem",0,l,"RadioGroupLargeItem",0,o])},748356,e=>{"use strict";var t=e.i(221628),s=e.i(737018),a=e.i(192451),r=e.i(55956),i=e.i(732097),n=e.i(733875),n=n,l=e.i(698269),o=e.i(416340),c=e.i(837710),u=e.i(299863),m=e.i(843778),d=e.i(375761),h=e.i(348481),p=e.i(767073),f=e.i(993394),_=e.i(858641),g=e.i(215312),y=e.i(841183),v=e.i(654894),b=e.i(280590);let S=e=>{if(!e)return null;let t=new Date(e);return isNaN(t.getTime())?null:t};e.s(["LogsDatePicker",0,({onSubmit:e,helpers:x,value:j,buttonTriggerProps:k,popoverContentProps:q,hideWarnings:w,align:P="end",open:E,onOpenChange:N,shortcutId:T})=>{let[O,A]=(0,o.useState)(!1),L=void 0!==E,C=L?E:O,R=e=>{L||A(e),N?.(e)},[I,$]=(0,o.useState)(""),D=(0,o.useMemo)(()=>I.trim()?(0,_.generateHelpersFromInput)(I)??[]:x,[I,x]);(0,o.useEffect)(()=>{if(!C){$(""),z(S(j.from));let e=S(j.to)??new Date;F(e),B(new Date(e));let t=S(j.from),s=S(j.to);Y({HH:t?.getHours().toString().padStart(2,"0")||"00",mm:t?.getMinutes().toString().padStart(2,"0")||"00",ss:t?.getSeconds().toString().padStart(2,"0")||"00"});let a=new Date,r=a.getHours().toString().padStart(2,"0"),i=a.getMinutes().toString().padStart(2,"0"),n=a.getSeconds().toString().padStart(2,"0");K({HH:s?.getHours().toString().padStart(2,"0")||r,mm:s?.getMinutes().toString().padStart(2,"0")||i,ss:s?.getSeconds().toString().padStart(2,"0")||n})}},[C,j]);let[M,z]=(0,o.useState)(S(j.from)),[H,F]=(0,o.useState)(S(j.to)??new Date),[U,B]=(0,o.useState)(()=>S(j.to)??new Date),[G,Y]=(0,o.useState)({HH:M?.getHours().toString()||"00",mm:M?.getMinutes().toString()||"00",ss:M?.getSeconds().toString()||"00"}),[W,K]=(0,o.useState)({HH:H?.getHours().toString()||"23",mm:H?.getMinutes().toString()||"59",ss:H?.getSeconds().toString()||"59"}),[V,Q]=(0,o.useState)(!1),[X,Z]=(0,o.useState)(!1);function J(){navigator.clipboard.readText().then(e=>{try{let t=JSON.parse(e);if(!t.from||!t.to)return void console.warn("Invalid date range format in clipboard");let s=new Date(t.from),a=new Date(t.to);if(isNaN(s.getTime())||isNaN(a.getTime()))return void console.warn("Invalid date values in clipboard");z(s),F(a),B(new Date(a)),Y({HH:s.getHours().toString(),mm:s.getMinutes().toString(),ss:s.getSeconds().toString()}),K({HH:a.getHours().toString(),mm:a.getMinutes().toString(),ss:a.getSeconds().toString()}),Z(!0)}catch(e){console.warn("Failed to parse clipboard content as date range:",e)}}).catch(e=>{console.warn("Failed to read clipboard:",e)})}(0,o.useEffect)(()=>{V&&setTimeout(()=>{Q(!1)},2e3)},[V]);let ee=(0,o.useCallback)(()=>{if(!M||!H)return;let e=new Date(M),t=new Date(H);e.setHours(+G.HH,+G.mm,+G.ss),t.setHours(+W.HH,+W.mm,+W.ss),(0,d.copyToClipboard)(JSON.stringify({from:e.toISOString(),to:t.toISOString()})),Q(!0)},[M,H,G,W]);(0,o.useEffect)(()=>{X&&setTimeout(()=>{Z(!1)},2e3)},[X]),(0,o.useEffect)(()=>(C&&(document.addEventListener("paste",J),document.addEventListener("copy",ee)),()=>{document.removeEventListener("paste",J),document.removeEventListener("copy",ee)}),[C,M,H,ee]);let et=Math.abs((0,r.default)(M).diff((0,r.default)(H),"days"))>f.LOGS_LARGE_DATE_RANGE_DAYS_THRESHOLD-1,{getEntitlementNumericValue:es}=(0,b.useCheckEntitlements)("log.retention_days"),ea=es(),er=(0,t.jsx)(p.PopoverTrigger,{asChild:!0,children:(0,t.jsx)(c.Button,{variant:"default",icon:(0,t.jsx)(i.Clock,{size:12}),...k,children:j.isHelper?j.text:`${(0,r.default)(j.from).format("DD MMM, HH:mm")} - ${(0,r.default)(j.to||new Date).format("DD MMM, HH:mm")}`})});return(0,t.jsxs)(p.Popover,{open:C,onOpenChange:R,children:[T?(0,t.jsx)(v.ShortcutTooltip,{shortcutId:T,side:"bottom",open:!C&&void 0,children:er}):er,(0,t.jsxs)(p.PopoverContent,{className:"flex w-full p-0",side:"bottom",align:P,...q,children:[(0,t.jsxs)("div",{className:"border-r p-2 flex flex-col gap-px",children:[(0,t.jsx)(h.Input,{type:"text",placeholder:"e.g. 2h, 30m, 7d",value:I,onChange:e=>$(e.target.value),className:"mb-2 text-xs h-7 rounded-xs"}),(0,t.jsx)(a.RadioGroup,{onValueChange:t=>{let s=D.find(e=>e.text===t);e&&s&&e({to:s.calcTo(),from:s.calcFrom(),isHelper:!0,text:s.text}),R(!1)},value:j.isHelper?j.text:"",className:"flex flex-col gap-px",children:D.map(e=>(0,t.jsxs)(s.Label,{className:(0,m.cn)("[&:has([data-state=checked])]:bg-background-overlay-hover [&:has([data-state=checked])]:text-foreground px-4 py-1.5 text-foreground-light flex items-center gap-2 hover:bg-background-overlay-hover hover:text-foreground transition-all rounded-xs text-xs w-full",{"cursor-not-allowed pointer-events-none opacity-50":e.disabled}),children:[(0,t.jsx)(a.RadioGroupItem,{hidden:!0,value:e.text,disabled:e.disabled,"aria-disabled":e.disabled},e.text),e.text,!(!e||!ea||Math.abs((0,r.default)().diff((0,r.default)(e.calcFrom()),"day"))<=ea)&&1?(0,t.jsx)(l.Lock,{size:12,className:"text-foreground-muted"}):null]},e.text))})]}),(0,t.jsxs)("div",{className:"w-fit max-w-full",children:[(0,t.jsxs)("div",{className:"flex p-2 gap-2 items-center",children:[(0,t.jsxs)("div",{className:"flex grow *:grow gap-2 font-mono",children:[(0,t.jsx)(y.TimeSplitInput,{type:"start",startTime:G,endTime:W,time:G,setTime:Y,setStartTime:Y,setEndTime:K,startDate:M,endDate:H}),(0,t.jsx)(y.TimeSplitInput,{type:"end",startTime:G,endTime:W,time:W,setTime:K,setStartTime:Y,setEndTime:K,startDate:M,endDate:H})]}),(0,t.jsx)("div",{className:"shrink",children:(0,t.jsx)(g.ButtonTooltip,{tooltip:{content:{text:"Clear time range"}},icon:(0,t.jsx)(n.default,{size:14}),variant:"text",size:"tiny",className:"px-1.5",onClick:()=>{Y({HH:"00",mm:"00",ss:"00"}),K({HH:"00",mm:"00",ss:"00"})}})})]}),(0,t.jsx)("div",{className:"border-t",children:(0,t.jsx)(u.Calendar,{mode:"range",month:U,onMonthChange:e=>B(new Date(e)),selected:{from:M??void 0,to:H??void 0},onSelect:e=>{!function(e){let[t,s]=e;z(t),F(s)}([e?.from??null,e?.to??null])}})}),et&&!w&&(0,t.jsx)("p",{className:"w-0 min-w-full px-3 pt-1 pb-4 text-xs text-warning",children:"Large ranges may result in memory errors for big projects."}),(0,t.jsxs)("div",{className:"flex items-center justify-end gap-2 p-2 border-t",children:[M&&H?(0,t.jsx)(c.Button,{variant:"text",size:"tiny",onClick:ee,className:(0,m.cn)({"text-brand-link":V||X}),children:V?"Copied!":X?"Pasted!":"Copy range"}):null,(0,t.jsx)(c.Button,{variant:"default",onClick:()=>{let e=new Date;B(e),z(new Date(e)),F(new Date(e))},children:"Today"}),(0,t.jsx)(c.Button,{onClick:function(){let t=M||new Date,s=H||new Date,a=new Date(t.setHours(+G.HH,+G.mm,+G.ss)),r=new Date(s.setHours(+W.HH,+W.mm,+W.ss));e({from:a.toISOString(),to:r.toISOString(),isHelper:!1}),R(!1)},children:"Apply"})]})]})]})]})}],748356)},409571,e=>{"use strict";let t=(0,e.i(679709).default)("Undo2",[["path",{d:"M9 14 4 9l5-5",key:"102s5s"}],["path",{d:"M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11",key:"f3b9sd"}]]);e.s(["Undo2",0,t],409571)},124532,e=>{"use strict";var t=e.i(221628),s=e.i(843778);e.s(["FeaturePreviewSidebarPanel",0,function({title:e,description:a,illustration:r,actions:i,className:n}){return(0,t.jsxs)("div",{className:(0,s.cn)("rounded-lg border p-4 space-y-3","bg-muted/10 border-border/50","text-left **:text-left [&_div]:items-start",n),children:[r&&(0,t.jsx)("div",{className:"flex justify-start items-start",children:r}),(0,t.jsxs)("div",{className:"space-y-1",children:[(0,t.jsx)("h3",{className:"font-medium text-sm text-foreground",children:e}),(0,t.jsx)("p",{className:"text-xs text-foreground-light",children:a})]}),i&&(0,t.jsx)("div",{className:"flex justify-start items-start gap-x-2",children:i})]})}])},182287,e=>{"use strict";let t=(0,e.i(679709).default)("Braces",[["path",{d:"M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1",key:"ezmyqa"}],["path",{d:"M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1",key:"e1hn23"}]]);e.s(["default",0,t])},223173,115037,807403,843819,671452,541635,928253,308837,608831,e=>{"use strict";var t=e.i(221628);e.i(481541);var s=e.i(33034);e.s(["Axiom",()=>s.default],115037);var s=s,a=e.i(126200);e.s(["Datadog",()=>a.default],807403);var a=a,r=e.i(841231);e.s(["Grafana",()=>r.default],843819);var r=r,i=e.i(57349);e.s(["Last9",()=>i.default],671452);var i=i,n=e.i(724487);e.s(["Otlp",()=>n.default],541635);var n=n,l=e.i(660253);e.s(["Sentry",()=>l.default],928253);var l=l,o=e.i(182287);e.s(["BracesIcon",()=>o.default],308837);var o=o;let c=(0,e.i(679709).default)("Cloud",[["path",{d:"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z",key:"p7xjir"}]]);e.s(["Cloud",0,c],608831);var u=e.i(822219);let m={height:24,width:24,className:"text-foreground-light"},d=[{value:"webhook",name:"Custom Endpoint",description:"Forward logs as a POST request to a custom HTTP endpoint",icon:(0,t.jsx)(o.default,{...m})},{value:"otlp",name:"OpenTelemetry Protocol (OTLP)",description:"Send logs to any OpenTelemetry Protocol (OTLP) compatible endpoint",icon:(0,t.jsx)(n.default,{...m,fill:"currentColor"})},{value:"datadog",name:"Datadog",description:"Datadog is a monitoring service for cloud-scale applications",icon:(0,t.jsx)(a.default,{...m,fill:"currentColor"})},{value:"loki",name:"Loki",description:"Loki is an open-source log aggregation system designed to store and query logs from multiple sources",icon:(0,t.jsx)(r.default,{...m,fill:"currentColor"})},{value:"s3",name:"Amazon S3",description:"Forward logs to an S3 bucket",icon:(0,t.jsx)(c,{...m})},{value:"sentry",name:"Sentry",description:"Sentry is an application monitoring service that helps developers identify and debug performance issues and errors",icon:(0,t.jsx)(l.default,{...m,fill:"currentColor"})},{value:"axiom",name:"Axiom",description:"Axiom is a data platform designed to efficiently collect, store, and analyze event and telemetry data at massive scale.",icon:(0,t.jsx)(s.default,{...m,fill:"currentColor"})},{value:"last9",name:"Last9",description:"Last9 is an observability platform for monitoring and telemetry data",icon:(0,t.jsx)(i.default,{...m,fill:"currentColor"})},{value:"syslog",name:"Syslog",description:"Forward logs to a remote Syslog receiver using TCP or TLS, adhering to RFC 5424",icon:(0,t.jsx)(u.Server,{...m})}];d.map(e=>e.value),e.s(["DATADOG_REGIONS",0,[{label:"AP1",value:"AP1"},{label:"AP2",value:"AP2"},{label:"EU",value:"EU"},{label:"UK1",value:"UK1"},{label:"US1",value:"US1"},{label:"US1-FED",value:"US1-FED"},{label:"US2-FED",value:"US2-FED"},{label:"US3",value:"US3"},{label:"US5",value:"US5"}],"LAST9_REGIONS",0,[{label:"US West 1",value:"US-WEST-1"},{label:"AP South 1",value:"AP-SOUTH-1"}],"LOG_DRAIN_TYPES",0,d,"OTLP_PROTOCOLS",0,[{label:"HTTP/Protobuf",value:"http/protobuf"}]],223173)},574956,e=>{"use strict";var t=e.i(221628);e.i(128328);var s=e.i(947748),a=e.i(158639),r=e.i(356245),r=r,i=e.i(409571),n=e.i(478372),l=e.i(183808),o=e.i(587433),c=e.i(837710),u=e.i(843778),m=e.i(463333),d=e.i(215312),h=e.i(124416),p=e.i(10429);e.s(["UnifiedLogsBanner",0,function({className:e="mx-4 mt-4"}){let f=(0,l.useRouter)(),{ref:_}=(0,a.useParams)(),{selectFeaturePreview:g}=(0,m.useFeaturePreviewModal)(),{enable:y,disable:v,isDefaultOptIn:b,isEnabled:S}=(0,m.useUnifiedLogsPreview)(),[x,j]=(0,h.useLocalStorageQuery)(s.LOCAL_STORAGE_KEYS.UNIFIED_LOGS_SIDEBAR_BANNER_DISMISSED,!1);if(!p.IS_PLATFORM||x&&!(S&&!b))return null;let k=(0,u.cn)("rounded-lg border p-4 space-y-3 text-left","bg-muted/10 border-border/50",e);return S&&!b?(0,t.jsx)("div",{className:(0,u.cn)("rounded-lg border px-4 py-3","bg-muted/10 border-border/50",e),children:(0,t.jsxs)("div",{className:"flex items-center justify-between gap-3",children:[(0,t.jsx)("p",{className:"min-w-0 flex-1 truncate text-sm font-medium text-foreground",children:"Go back to old logs"}),(0,t.jsx)(d.ButtonTooltip,{variant:"default",className:"shrink-0 px-1.5",icon:(0,t.jsx)(i.Undo2,{}),onClick:()=>{v(),f.push(`/project/${_}/logs/explorer`)},tooltip:{content:{side:"bottom",text:"Switch back"}}})]})}):(0,t.jsxs)("div",{className:k,children:[(0,t.jsxs)("div",{className:"flex items-start justify-between",children:[(0,t.jsx)(o.Badge,{variant:"success",children:"New"}),(0,t.jsx)(c.Button,{variant:"text",size:"tiny",icon:(0,t.jsx)(n.X,{size:14,strokeWidth:1.5}),onClick:()=>j(!0),className:"opacity-75 hover:opacity-100 -mt-1 -mr-1 px-1","aria-label":"Dismiss banner"})]}),(0,t.jsx)("h3",{className:"font-medium text-sm text-foreground",children:"Introducing unified logs"}),(0,t.jsx)("div",{className:"flex justify-start items-start gap-x-2",children:b?(0,t.jsx)(c.Button,{variant:"default",icon:(0,t.jsx)(r.default,{}),onClick:()=>g("supabase-ui-preview-unified-logs"),children:"More information"}):(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(c.Button,{variant:"default",onClick:()=>{y(),f.push(`/project/${_}/logs`)},children:"Enable preview"}),(0,t.jsx)(d.ButtonTooltip,{variant:"default",className:"px-1.5",icon:(0,t.jsx)(r.default,{}),onClick:()=>g("supabase-ui-preview-unified-logs"),tooltip:{content:{side:"bottom",text:"More information"}}})]})})]})}],574956)},300994,e=>{"use strict";e.i(128328);var t=e.i(657588);e.s(["useShowMultigresLogs",0,()=>(0,t.useFlag)("showMultigresLogs")])},258732,556955,e=>{"use strict";e.i(850036);var t=e.i(479084),s=e.i(387578);let a=50,r=({page:e=0,verified:r,keywords:n,providers:l,sort:o,order:c,limit:u=a,column:m,startAt:d,cursor:h,improvedSearchEnabled:p=!1})=>{if(p)return i({column:m??"email",keywords:n,verified:r,providers:l,sort:o,order:c,limit:u,cursor:h});let f=e*u,_=[];if(n&&""!==n){let e=`%${n}%`;_.push(t.safeSql`id::text like ${(0,t.literal)(e)} or email like ${(0,t.literal)(e)} or phone like ${(0,t.literal)(e)} or raw_user_meta_data->>'full_name' ilike ${(0,t.literal)(e)} or raw_user_meta_data->>'first_name' ilike ${(0,t.literal)(e)} or raw_user_meta_data->>'last_name' ilike ${(0,t.literal)(e)} or raw_user_meta_data->>'display_name' ilike ${(0,t.literal)(e)}`)}"verified"===r?_.push(t.safeSql`email_confirmed_at IS NOT NULL or phone_confirmed_at IS NOT NULL`):"anonymous"===r?_.push(t.safeSql`is_anonymous is true`):"unverified"===r&&_.push(t.safeSql`email_confirmed_at IS NULL AND phone_confirmed_at IS NULL`),l&&l.length>0&&(l.includes("saml 2.0")?_.push(t.safeSql`(select jsonb_agg(case when value ~ '^sso' then 'sso' else value end) from jsonb_array_elements_text((raw_app_meta_data ->> 'providers')::jsonb)) ?| array[${(0,t.joinSqlFragments)(l.map(e=>(0,t.literal)("saml 2.0"===e?"sso":e)),", ")}]`):_.push(t.safeSql`(raw_app_meta_data->>'providers')::jsonb ?| array[${(0,t.joinSqlFragments)(l.map(e=>(0,t.literal)(e)),", ")}]`));let g=(0,t.joinSqlFragments)(_.map(e=>t.safeSql`(${e})`)," and "),y=(0,t.keyword)(o)??t.safeSql`created_at`,v=(0,t.keyword)(c)??t.safeSql`desc`,b=t.safeSql`${_.length>0?t.safeSql` where ${g}`:t.safeSql``}
+    order by
+      ${(0,t.ident)(y)} ${v} nulls last
+    limit
+      ${(0,t.literal)(u)}
+    offset
+      ${(0,t.literal)(f)}
+  `,S=d?t.safeSql`>`:t.safeSql`>=`;if("email"===m){let e=(0,s.stringRange)(n??"");b=t.safeSql`where lower(email) ${S} ${(0,t.literal)(d||e[0])} ${e[1]?t.safeSql`and lower(email) < ${(0,t.literal)(e[1])}`:t.safeSql``} and instance_id = '00000000-0000-0000-0000-000000000000'::uuid order by instance_id, lower(email) asc limit ${(0,t.literal)(u)}`}else if("phone"===m){let e=(0,s.stringRange)(n??"");b=t.safeSql`where phone ${S} ${(0,t.literal)(d||e[0])} ${e[1]?t.safeSql`and phone < ${(0,t.literal)(e[1])}`:t.safeSql``} order by phone asc limit ${(0,t.literal)(u)}`}else"id"===m&&(b=(0,s.prefixToUUID)(n??"",!1)===n?t.safeSql`where id = ${(0,t.literal)(n)} order by id asc limit ${(0,t.literal)(u)}`:t.safeSql`where id ${S} ${(0,t.literal)(d||(0,s.prefixToUUID)(n??"",!1))} and id < ${(0,t.literal)((0,s.prefixToUUID)(n??"",!0))} order by id asc limit ${(0,t.literal)(u)}`);let x=t.safeSql`
+    select
+      auth.users.id,
+      auth.users.email,
+      auth.users.banned_until,
+      auth.users.created_at,
+      auth.users.confirmed_at,
+      auth.users.confirmation_sent_at,
+      auth.users.is_anonymous,
+      auth.users.is_sso_user,
+      auth.users.invited_at,
+      auth.users.last_sign_in_at,
+      auth.users.phone,
+      auth.users.raw_app_meta_data,
+      auth.users.raw_user_meta_data,
+      auth.users.updated_at
+    from
+      auth.users
+    ${b}`;return t.safeSql`with
+  users_data as (${x})
+select
+  *,
+  coalesce(
+    (
+      select
+        array_agg(distinct i.provider)
+      from
+        auth.identities i
+      where
+        i.user_id = users_data.id
+    ),
+    '{}'::text[]
+  ) as providers
+from
+  users_data;`},i=({column:e,keywords:r,verified:i,providers:n,sort:l,order:o,cursor:c,limit:u=a})=>{let m=[];if(r&&""!==r){if("email"===e){let e=(0,s.stringRange)(r);e[1]?m.push(t.safeSql`email >= ${(0,t.literal)(e[0])} AND email < ${(0,t.literal)(e[1])}`):m.push(t.safeSql`email >= ${(0,t.literal)(e[0])}`)}else if("phone"===e){let e=(0,s.stringRange)(r);e[1]?m.push(t.safeSql`phone >= ${(0,t.literal)(e[0])} AND phone < ${(0,t.literal)(e[1])}`):m.push(t.safeSql`phone >= ${(0,t.literal)(e[0])}`)}else if("id"===e)m.push(t.safeSql`id = ${(0,t.literal)(r)}`);else if("name"===e){let e=(0,s.stringRange)(r);e[1]?m.push(t.safeSql`raw_user_meta_data->>'name' >= ${(0,t.literal)(e[0])} AND raw_user_meta_data->>'name' < ${(0,t.literal)(e[1])}`):m.push(t.safeSql`raw_user_meta_data->>'name' >= ${(0,t.literal)(e[0])}`)}}"verified"===i?m.push(t.safeSql`(email_confirmed_at IS NOT NULL OR phone_confirmed_at IS NOT NULL)`):"anonymous"===i?m.push(t.safeSql`is_anonymous IS TRUE`):"unverified"===i&&m.push(t.safeSql`(email_confirmed_at IS NULL AND phone_confirmed_at IS NULL)`),n&&n.length>0&&(n.includes("saml 2.0")?m.push(t.safeSql`(SELECT jsonb_agg(CASE WHEN value ~ '^sso' THEN 'sso' ELSE value END) FROM jsonb_array_elements_text((raw_app_meta_data ->> 'providers')::jsonb)) ?| array[${(0,t.joinSqlFragments)(n.map(e=>(0,t.literal)("saml 2.0"===e?"sso":e)),", ")}]`):m.push(t.safeSql`(raw_app_meta_data->>'providers')::jsonb ?| array[${(0,t.joinSqlFragments)(n.map(e=>(0,t.literal)(e)),", ")}]`));let d=(0,t.keyword)(l)??t.safeSql`created_at`,h=(0,t.keyword)(o)??t.safeSql`desc`;if(c){let e="desc"===h?t.safeSql`<`:t.safeSql`>`;"id"===d?m.push(t.safeSql`id ${e} ${(0,t.literal)(c.id)}::uuid`):m.push(t.safeSql`(${(0,t.ident)(d)}, id) ${e} (${(0,t.literal)(c.sort)}, ${(0,t.literal)(c.id)}::uuid)`)}let p=(0,t.joinSqlFragments)(m.map(e=>t.safeSql`(${e})`)," AND "),f=m.length>0?t.safeSql`WHERE ${p}`:t.safeSql``,_="id"===d?t.safeSql`${(0,t.ident)(d)} ${h}`:t.safeSql`${(0,t.ident)(d)} ${h}, id ${h}`,g=t.safeSql`
+    SELECT
+      auth.users.id,
+      auth.users.email,
+      auth.users.banned_until,
+      auth.users.created_at,
+      auth.users.confirmed_at,
+      auth.users.confirmation_sent_at,
+      auth.users.is_anonymous,
+      auth.users.is_sso_user,
+      auth.users.invited_at,
+      auth.users.last_sign_in_at,
+      auth.users.phone,
+      auth.users.raw_app_meta_data,
+      auth.users.raw_user_meta_data
+    FROM
+      auth.users
+    ${f}
+    ORDER BY
+      ${_}
+    LIMIT
+      ${(0,t.literal)(u)}`;return t.safeSql`WITH
+  users_data AS (${g})
+SELECT
+  *,
+  COALESCE(
+    (
+      SELECT
+        array_agg(DISTINCT i.provider)
+      FROM
+        auth.identities i
+      WHERE
+        i.user_id = users_data.id
+    ),
+    '{}'::text[]
+  ) AS providers
+FROM
+  users_data;`};e.s(["getPaginatedUsersSQL",0,r],556955);var n=e.i(793041),l=e.i(294285),o=e.i(617361),c=e.i(635494);e.i(10429);var u=e.i(837508);e.s(["useUsersInfiniteQuery",0,({projectRef:e,connectionString:t,keywords:s,filter:a,providers:i,sort:m,order:d,column:h,improvedSearchEnabled:p=!1},{enabled:f=!0,..._}={})=>{let{data:g}=(0,c.useSelectedProjectQuery)(),y=g?.status===u.PROJECT_STATUS.ACTIVE_HEALTHY;return(0,n.useInfiniteQuery)({queryKey:l.authKeys.usersInfinite(e,{keywords:s,filter:a,providers:i,sort:m,order:d,column:h}),queryFn:({signal:n,pageParam:l})=>(0,o.executeSql)({projectRef:e,connectionString:t,sql:r({page:h?void 0:l,verified:a,keywords:s,providers:i,sort:m??"id",order:d??"asc",limit:50,column:h,startAt:h?l:void 0,cursor:p?l:void 0,improvedSearchEnabled:p})},n),enabled:f&&void 0!==e&&y,initialPageParam:void 0,getNextPageParam(e,t){if(!(e.result.length>=50))return;let s=e.result[e.result.length-1];if(s)return p?{sort:s[m??"created_at"],id:s.id}:h?s[h]:t.length},..._})}],258732)},492595,e=>{"use strict";let t=(0,e.i(679709).default)("Globe",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",key:"13o1zl"}],["path",{d:"M2 12h20",key:"9i4pu4"}]]);e.s(["Globe",0,t],492595)},417686,e=>{"use strict";let t=(0,e.i(679709).default)("PanelLeftClose",[["rect",{width:"18",height:"18",x:"3",y:"3",rx:"2",key:"afitv7"}],["path",{d:"M9 3v18",key:"fh3hqa"}],["path",{d:"m16 15-3-3 3-3",key:"14y99z"}]]);e.s(["PanelLeftClose",0,t],417686)},971897,e=>{"use strict";let t=(0,e.i(679709).default)("PanelLeftOpen",[["rect",{width:"18",height:"18",x:"3",y:"3",rx:"2",key:"afitv7"}],["path",{d:"M9 3v18",key:"fh3hqa"}],["path",{d:"m14 9 3 3-3 3",key:"8010ee"}]]);e.s(["PanelLeftOpen",0,t],971897)},75673,e=>{"use strict";e.s(["logsKeys",0,{otelLogKeys:(e,t)=>["projects",e,"otel-log-keys",t],unifiedLogsInfinite:(e,t)=>["projects",e,"unified-logs","logs-data",...t?[t].filter(Boolean):[]],unifiedLogsCount:(e,t)=>["projects",e,"unified-logs","count-data",...t?[t].filter(Boolean):[]],unifiedLogsChart:(e,t)=>["projects",e,"unified-logs","chart-data",...t?[t].filter(Boolean):[]],unifiedLogsFacetCount:(e,t,s,a)=>["projects",e,"unified-logs","count-data",t,s,...a?[a].filter(Boolean):[]],serviceFlow:(e,t,s)=>["projects",e,"unified-logs","service-flow",s,...t?[t].filter(Boolean):[]]}])},590552,e=>{"use strict";let t=(0,e.i(679709).default)("Network",[["rect",{x:"16",y:"16",width:"6",height:"6",rx:"1",key:"4q2zg0"}],["rect",{x:"2",y:"16",width:"6",height:"6",rx:"1",key:"8cvhb9"}],["rect",{x:"9",y:"2",width:"6",height:"6",rx:"1",key:"1egb70"}],["path",{d:"M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3",key:"1jsf9p"}],["path",{d:"M12 12V8",key:"2874zd"}]]);e.s(["Network",0,t],590552)},820308,775159,e=>{"use strict";e.i(850036);var t,s,a=e.i(479084),r=e.i(55956),i=((t={}).API="api",t.STORAGE="storage",t.AUTH="auth",t.QUERY_PERFORMANCE="query_performance",t.DATABASE="database",t);e.s(["Presets",()=>i],775159);var n=e.i(562616),l=((s={}).LAST_10_MINUTES="Last 10 minutes",s.LAST_30_MINUTES="Last 30 minutes",s.LAST_60_MINUTES="Last 60 minutes",s.LAST_3_HOURS="Last 3 hours",s.LAST_24_HOURS="Last 24 hours",s.LAST_7_DAYS="Last 7 days",s.LAST_14_DAYS="Last 14 days",s.LAST_28_DAYS="Last 28 days",s);let o=[{text:"Last 10 minutes",calcFrom:()=>(0,r.default)().subtract(10,"minute").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["free","pro","team","enterprise","platform"]},{text:"Last 30 minutes",calcFrom:()=>(0,r.default)().subtract(30,"minute").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["free","pro","team","enterprise","platform"]},{text:"Last 60 minutes",calcFrom:()=>(0,r.default)().subtract(1,"hour").toISOString(),calcTo:()=>(0,r.default)().toISOString(),default:!0,availableIn:["free","pro","team","enterprise","platform"]},{text:"Last 3 hours",calcFrom:()=>(0,r.default)().subtract(3,"hour").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["free","pro","team","enterprise","platform"]},{text:"Last 24 hours",calcFrom:()=>(0,r.default)().subtract(1,"day").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["free","pro","team","enterprise","platform"]},{text:"Last 7 days",calcFrom:()=>(0,r.default)().subtract(7,"day").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["pro","team","enterprise"]},{text:"Last 14 days",calcFrom:()=>(0,r.default)().subtract(14,"day").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["team","enterprise"]},{text:"Last 28 days",calcFrom:()=>(0,r.default)().subtract(28,"day").toISOString(),calcTo:()=>(0,r.default)().toISOString(),availableIn:["team","enterprise"]}],c={iso_timestamp_start:o[0].calcFrom(),iso_timestamp_end:o[0].calcTo()};function u(e){return e.replace(/^WHERE/,"AND")}function m(e,t=!0){if(0===e.length)return n.safeSql``;let s=e.map(e=>{let t,s=e.key.split("."),a=[s[s.length-2],s[s.length-1]].join("."),r=e.key.includes(".")?a:e.key;try{t=(0,n.quotedIdent)(r)}catch{return null}let i=isNaN(Number(e.value))?(0,n.analyticsLiteral)(String(e.value)):(0,n.analyticsLiteral)(Number(e.value));switch(e.compare){case"matches":return n.safeSql`REGEXP_CONTAINS(${t}, ${i})`;case"is":default:return n.safeSql`${t} = ${i}`;case"!=":return n.safeSql`${t} != ${i}`;case">=":return n.safeSql`${t} >= ${i}`;case"<=":return n.safeSql`${t} <= ${i}`;case">":return n.safeSql`${t} > ${i}`;case"<":return n.safeSql`${t} < ${i}`}}).filter(e=>null!==e);if(0===s.length)return n.safeSql``;let a=(0,n.joinSqlFragments)(s," AND ");return t?n.safeSql`WHERE ${a}`:n.safeSql`AND ${a}`}let d={[i.API]:{title:"API",queries:{totalRequests:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-total-requests
+        select
+          cast(timestamp_trunc(t.timestamp, hour) as datetime) as timestamp,
+          count(t.id) as count
+        FROM edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+          ${m(e)}
+        GROUP BY
+          timestamp
+        ORDER BY
+          timestamp ASC`},topRoutes:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-top-routes
+        select
+          request.path as path,
+          request.method as method,
+          request.search as search,
+          response.status_code as status_code,
+          count(t.id) as count
+        from edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+          ${m(e)}
+        group by
+          request.path, request.method, request.search, response.status_code
+        order by
+          count desc
+        limit 10
+        `},errorCounts:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-error-counts
+        select
+          cast(timestamp_trunc(t.timestamp, hour) as datetime) as timestamp,
+          count(t.id) as count
+        FROM edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+        WHERE
+          response.status_code >= 400
+        ${m(e,!1)}
+        GROUP BY
+          timestamp
+        ORDER BY
+          timestamp ASC
+        `},topErrorRoutes:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-top-error-routes
+        select
+          request.path as path,
+          request.method as method,
+          request.search as search,
+          response.status_code as status_code,
+          count(t.id) as count
+        from edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+        where
+          response.status_code >= 400
+        ${m(e,!1)}
+        group by
+          request.path, request.method, request.search, response.status_code
+        order by
+          count desc
+        limit 10
+        `},responseSpeed:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-response-speed
+        select
+          cast(timestamp_trunc(t.timestamp, hour) as datetime) as timestamp,
+          avg(response.origin_time) as avg
+        FROM
+          edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+          ${m(e)}
+        GROUP BY
+          timestamp
+        ORDER BY
+          timestamp ASC
+      `},topSlowRoutes:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-top-slow-routes
+        select
+          request.path as path,
+          request.method as method,
+          request.search as search,
+          response.status_code as status_code,
+          count(t.id) as count,
+          avg(response.origin_time) as avg
+        from edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+        ${m(e)}
+        group by
+          request.path, request.method, request.search, response.status_code
+        order by
+          avg desc
+        limit 10
+        `},networkTraffic:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-network-traffic
+        select
+          cast(timestamp_trunc(t.timestamp, hour) as datetime) as timestamp,
+          coalesce(
+            safe_divide(
+              sum(
+                cast(coalesce(headers.content_length, "0") as int64)
+              ),
+              1000000
+            ),
+            0
+          ) as ingress_mb,
+          coalesce(
+            safe_divide(
+              sum(
+                cast(coalesce(resp_headers.content_length, "0") as int64)
+              ),
+              1000000
+            ),
+            0
+          ) as egress_mb,
+        FROM
+          edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+          cross join unnest(response.headers) as resp_headers
+          ${m(e)}
+        GROUP BY
+          timestamp
+        ORDER BY
+          timestamp ASC
+        `},requestsByCountry:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-api-requests-by-country
+        select
+          cf.country as country,
+          count(t.id) as count
+        from edge_logs t
+          cross join unnest(metadata) as m
+          cross join unnest(m.response) as response
+          cross join unnest(m.request) as request
+          cross join unnest(request.headers) as headers
+          cross join unnest(request.cf) as cf
+        where
+          cf.country is not null
+        ${m(e,!1)}
+        group by
+          cf.country
+        `}}},[i.AUTH]:{title:"",queries:{}},[i.STORAGE]:{title:"Storage",queries:{cacheHitRate:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-storage-cache-hit-rate
+SELECT
+  timestamp_trunc(timestamp, hour) as timestamp,
+  countif( h.cf_cache_status in ('HIT', 'STALE', 'REVALIDATED', 'UPDATING') ) as hit_count,
+  countif( h.cf_cache_status in ('MISS', 'NONE/UNKNOWN', 'EXPIRED', 'BYPASS', 'DYNAMIC') ) as miss_count
+from edge_logs f
+  cross join unnest(f.metadata) as m
+  cross join unnest(m.request) as r
+  cross join unnest(m.response) as res
+  cross join unnest(res.headers) as h
+where starts_with(r.path, '/storage/v1/object') and r.method = 'GET'
+  ${m(e,!1)}
+group by timestamp
+order by timestamp desc
+`},topCacheMisses:{queryType:"logs",safeSql:e=>n.safeSql`
+        -- reports-storage-top-cache-misses
+SELECT
+  r.path as path,
+  r.search as search,
+  count(id) as count
+from edge_logs f
+  cross join unnest(f.metadata) as m
+  cross join unnest(m.request) as r
+  cross join unnest(m.response) as res
+  cross join unnest(res.headers) as h
+where starts_with(r.path, '/storage/v1/object')
+  and r.method = 'GET'
+  and h.cf_cache_status in ('MISS', 'NONE/UNKNOWN', 'EXPIRED', 'BYPASS', 'DYNAMIC')
+  ${m(e,!1)}
+group by path, search
+order by count desc
+limit 12
+    `}}},[i.QUERY_PERFORMANCE]:{title:"Query performance",queries:{mostFrequentlyInvoked:{queryType:"db",safeSql:(e,t,s,r=!1,i=!1)=>a.safeSql`
+        -- reports-query-performance-most-frequently-invoked
+set search_path to public, extensions;
+
+select
+    auth.rolname,
+    statements.query,
+    statements.calls,
+    -- -- Postgres 13, 14, 15
+    statements.total_exec_time + statements.total_plan_time as total_time,
+    statements.min_exec_time + statements.min_plan_time as min_time,
+    statements.max_exec_time + statements.max_plan_time as max_time,
+    statements.mean_exec_time + statements.mean_plan_time as mean_time,
+    -- -- Postgres <= 12
+    -- total_time,
+    -- min_time,
+    -- max_time,
+    -- mean_time,
+    coalesce(statements.rows::numeric / nullif(statements.calls, 0), 0) as avg_rows,
+    statements.rows as rows_read,
+    case
+      when (statements.shared_blks_hit + statements.shared_blks_read) > 0
+      then round(
+        (statements.shared_blks_hit * 100.0) /
+        (statements.shared_blks_hit + statements.shared_blks_read),
+        2
+      )
+      else 0
+    end as cache_hit_rate${r?a.safeSql`,
+    case
+      when (lower(statements.query) like 'select%' or lower(statements.query) like 'with pgrst%')
+      then (
+        select json_build_object(
+          'has_suggestion', array_length(index_statements, 1) > 0,
+          'startup_cost_before', startup_cost_before,
+          'startup_cost_after', startup_cost_after,
+          'total_cost_before', total_cost_before,
+          'total_cost_after', total_cost_after,
+          'index_statements', index_statements
+        )
+        from index_advisor(statements.query)
+      )
+      else null
+    end as index_advisor_result`:a.safeSql``}
+  from pg_stat_statements as statements
+    inner join pg_authid as auth on statements.userid = auth.oid
+  -- skip queries that were never actually executed
+  WHERE statements.calls > 0 ${t?u(t):a.safeSql``}
+  ${s||a.safeSql`order by statements.calls desc`}
+  limit 20`},mostTimeConsuming:{queryType:"db",safeSql:(e,t,s,r=!1,i=!1)=>a.safeSql`
+        -- reports-query-performance-most-time-consuming
+set search_path to public, extensions;
+
+-- compute total time once up front so we don't need a window function over all rows
+with grand_total as (
+  select coalesce(nullif(sum(total_exec_time + total_plan_time), 0), 1) as v
+  from pg_stat_statements where calls > 0
+)
+select
+    auth.rolname,
+    statements.query,
+    statements.calls,
+    statements.total_exec_time + statements.total_plan_time as total_time,
+    statements.mean_exec_time + statements.mean_plan_time as mean_time,
+    coalesce(
+      ((statements.total_exec_time + statements.total_plan_time) /
+        (select v from grand_total)) *
+        100,
+      0
+    ) as prop_total_time${r?a.safeSql`,
+    case
+      when (lower(statements.query) like 'select%' or lower(statements.query) like 'with pgrst%')
+      then (
+        select json_build_object(
+          'has_suggestion', array_length(index_statements, 1) > 0,
+          'startup_cost_before', startup_cost_before,
+          'startup_cost_after', startup_cost_after,
+          'total_cost_before', total_cost_before,
+          'total_cost_after', total_cost_after,
+          'index_statements', index_statements
+        )
+        from index_advisor(statements.query)
+      )
+      else null
+    end as index_advisor_result`:a.safeSql``}
+  from pg_stat_statements as statements
+    inner join pg_authid as auth on statements.userid = auth.oid
+  -- skip queries that were never actually executed
+  WHERE statements.calls > 0 ${t?u(t):a.safeSql``}
+  ${s||a.safeSql`order by total_time desc`}
+  limit 20`},slowestExecutionTime:{queryType:"db",safeSql:(e,t,s,r=!1,i=!1)=>a.safeSql`
+        -- reports-query-performance-slowest-execution-time
+set search_path to public, extensions;
+
+select
+    auth.rolname,
+    statements.query,
+    statements.calls,
+    -- -- Postgres 13, 14, 15
+    statements.total_exec_time + statements.total_plan_time as total_time,
+    statements.min_exec_time + statements.min_plan_time as min_time,
+    statements.max_exec_time + statements.max_plan_time as max_time,
+    statements.mean_exec_time + statements.mean_plan_time as mean_time,
+    -- -- Postgres <= 12
+    -- total_time,
+    -- min_time,
+    -- max_time,
+    -- mean_time,
+    coalesce(statements.rows::numeric / nullif(statements.calls, 0), 0) as avg_rows${r?a.safeSql`,
+    case
+      when (lower(statements.query) like 'select%' or lower(statements.query) like 'with pgrst%')
+      then (
+        select json_build_object(
+          'has_suggestion', array_length(index_statements, 1) > 0,
+          'startup_cost_before', startup_cost_before,
+          'startup_cost_after', startup_cost_after,
+          'total_cost_before', total_cost_before,
+          'total_cost_after', total_cost_after,
+          'index_statements', index_statements
+        )
+        from index_advisor(statements.query)
+      )
+      else null
+    end as index_advisor_result`:a.safeSql``}
+  from pg_stat_statements as statements
+    inner join pg_authid as auth on statements.userid = auth.oid
+  -- skip queries that were never actually executed
+  WHERE statements.calls > 0 ${t?u(t):a.safeSql``}
+  ${s||a.safeSql`order by max_time desc`}
+  limit 20`},queryHitRate:{queryType:"db",safeSql:e=>a.safeSql`-- reports-query-performance-cache-and-index-hit-rate
+select
+    'index hit rate' as name,
+    (sum(idx_blks_hit)) / nullif(sum(idx_blks_hit + idx_blks_read),0) as ratio
+  from pg_statio_user_indexes
+  union all
+  select
+    'table hit rate' as name,
+    sum(heap_blks_hit) / nullif(sum(heap_blks_hit) + sum(heap_blks_read),0) as ratio
+  from pg_statio_user_tables;`},unified:{queryType:"db",safeSql:(e,t,s,r=!1,i=!1,n=1,l=20)=>{let o=(n-1)*l,c=i&&r?o+10*l:o+l,m=r?Math.min(c,500):c;return a.safeSql`
+        -- reports-query-performance-unified
+        set search_path to public, extensions;
+
+        -- compute total time once up front so we don't need a window function over all rows
+        with grand_total as (
+          select coalesce(nullif(sum(total_exec_time + total_plan_time), 0), 1) as v
+          from pg_stat_statements where calls > 0
+        ),
+        base as (
+          select
+            auth.rolname,
+            statements.query,
+            statements.calls,
+            statements.total_exec_time + statements.total_plan_time as total_time,
+            statements.min_exec_time + statements.min_plan_time as min_time,
+            statements.max_exec_time + statements.max_plan_time as max_time,
+            statements.mean_exec_time + statements.mean_plan_time as mean_time,
+            coalesce(statements.rows::numeric / nullif(statements.calls, 0), 0) as avg_rows,
+            statements.rows as rows_read,
+            statements.shared_blks_hit as debug_hit,
+            statements.shared_blks_read as debug_read,
+            case
+              when (statements.shared_blks_hit + statements.shared_blks_read) > 0
+              then (statements.shared_blks_hit::numeric * 100.0) /
+                   (statements.shared_blks_hit + statements.shared_blks_read)
+              else 0
+            end as cache_hit_rate,
+            coalesce(
+              ((statements.total_exec_time + statements.total_plan_time) /
+                (select v from grand_total)) *
+                100,
+              0
+            ) as prop_total_time
+          from pg_stat_statements as statements
+            inner join pg_authid as auth on statements.userid = auth.oid
+          -- skip queries that were never actually executed
+          WHERE statements.calls > 0 ${t?u(t):a.safeSql``}
+          ${s||a.safeSql`order by total_time desc`}
+          ${null!==m?a.safeSql`limit ${(0,a.literal)(m)}`:a.safeSql``}
+        ),
+        query_results as (
+          select
+            base.*${r?a.safeSql`,
+            case
+              when (lower(base.query) like 'select%' or lower(base.query) like 'with pgrst%')
+              then (
+                select json_build_object(
+                  'has_suggestion', array_length(index_statements, 1) > 0,
+                  'startup_cost_before', startup_cost_before,
+                  'startup_cost_after', startup_cost_after,
+                  'total_cost_before', total_cost_before,
+                  'total_cost_after', total_cost_after,
+                  'index_statements', index_statements
+                )
+                from index_advisor(base.query)
+              )
+              else null
+            end as index_advisor_result`:a.safeSql``}
+          from base
+        )
+        select *
+        from query_results
+        ${i&&r?a.safeSql`where (index_advisor_result->>'has_suggestion')::boolean = true`:a.safeSql``}
+        ${s||a.safeSql`order by total_time desc`}
+        limit ${(0,a.literal)(l)} offset ${(0,a.literal)(o)}`}},slowQueriesCount:{queryType:"db",safeSql:()=>a.safeSql`
+        -- reports-query-performance-slow-queries-count
+        set search_path to public, extensions;
+
+        -- Count of slow queries (> 1 second average)
+        SELECT count(*) as slow_queries_count
+        -- alias needed to reference columns in WHERE
+        FROM pg_stat_statements as statements
+        -- skip never-executed queries; mean_exec_time > 1000ms = avg over 1 second
+        WHERE statements.calls > 0 AND statements.mean_exec_time > 1000;`},queryMetrics:{queryType:"db",safeSql:(e,t,s,r=!1,i=!1)=>a.safeSql`
+        -- reports-query-performance-metrics
+        set search_path to public, extensions;
+
+        SELECT
+          COALESCE(ROUND(AVG(statements.rows::numeric / NULLIF(statements.calls, 0)), 1), 0) as avg_rows_per_call,
+          COUNT(*) FILTER (WHERE statements.total_exec_time + statements.total_plan_time > 1000) as slow_queries,
+          COALESCE(
+            ROUND(
+              SUM(statements.shared_blks_hit) * 100.0 /
+              NULLIF(SUM(statements.shared_blks_hit + statements.shared_blks_read), 0),
+              2
+            ), 0
+          ) || '%' as cache_hit_rate
+        FROM pg_stat_statements as statements
+        -- skip queries that were never actually executed
+        WHERE statements.calls > 0 ${t?u(t):a.safeSql``}
+        ${s||a.safeSql``}`}}},[i.DATABASE]:{title:"database",queries:{largeObjects:{queryType:"db",safeSql:e=>a.safeSql`-- reports-database-large-objects
+SELECT
+        SCHEMA_NAME,
+        relname,
+        table_size
+      FROM
+        (SELECT
+          pg_catalog.pg_namespace.nspname AS SCHEMA_NAME,
+          relname,
+          pg_total_relation_size(pg_catalog.pg_class.oid) AS table_size
+        FROM pg_catalog.pg_class
+        JOIN pg_catalog.pg_namespace ON relnamespace = pg_catalog.pg_namespace.oid
+        ) t
+      WHERE SCHEMA_NAME NOT LIKE 'pg_%'
+      ORDER BY table_size DESC
+      LIMIT 5;`}}}};e.s(["BURSTABLE_IO_METRIC_KEYS",0,["disk_io_budget","disk_io_consumption"],"DEFAULT_QUERY_PARAMS",0,c,"DEPRECATED_REPORTS",0,["total_realtime_ingress","total_rest_options_requests","total_auth_ingress","total_auth_get_requests","total_auth_post_requests","total_auth_patch_requests","total_auth_options_requests","total_storage_options_requests","total_storage_patch_requests","total_options_requests","total_rest_ingress","total_rest_get_requests","total_rest_post_requests","total_rest_patch_requests","total_rest_delete_requests","total_storage_get_requests","total_storage_post_requests","total_storage_delete_requests","total_auth_delete_requests","total_get_requests","total_patch_requests","total_post_requests","total_ingress","total_delete_requests"],"EDGE_FUNCTION_REGIONS",0,[{key:"ap-northeast-1",label:"Tokyo"},{key:"ap-northeast-2",label:"Seoul"},{key:"ap-south-1",label:"Mumbai"},{key:"ap-southeast-1",label:"Singapore"},{key:"ap-southeast-2",label:"Sydney"},{key:"ca-central-1",label:"Canada Central"},{key:"us-east-1",label:"N. Virginia"},{key:"us-west-1",label:"N. California"},{key:"us-west-2",label:"Oregon"},{key:"eu-central-1",label:"Frankfurt"},{key:"eu-west-1",label:"Ireland"},{key:"eu-west-2",label:"London"},{key:"eu-west-3",label:"Paris"},{key:"sa-east-1",label:"São Paulo"}],"LAYOUT_COLUMN_COUNT",0,2,"PRESET_CONFIG",0,d,"REPORTS_DATEPICKER_HELPERS",0,o,"REPORT_DATERANGE_HELPER_LABELS",()=>l,"generateRegexpWhereSafe",0,m],820308)},676666,776137,e=>{"use strict";let t=(0,e.i(679709).default)("Filter",[["polygon",{points:"22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3",key:"1yg77f"}]]);e.s(["default",0,t],776137),e.s(["Filter",0,t],676666)},671271,e=>{"use strict";let t=(0,e.i(679709).default)("Settings2",[["path",{d:"M20 7h-9",key:"3s1dr2"}],["path",{d:"M14 17H5",key:"gfn3mx"}],["circle",{cx:"17",cy:"17",r:"3",key:"18b49y"}],["circle",{cx:"7",cy:"7",r:"3",key:"dfmy0x"}]]);e.s(["Settings2",0,t],671271)},444734,e=>{"use strict";let t=(0,e.i(679709).default)("ShieldCheck",[["path",{d:"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",key:"oel41y"}],["path",{d:"m9 12 2 2 4-4",key:"dzmm74"}]]);e.s(["ShieldCheck",0,t],444734)},172329,383692,338994,e=>{"use strict";var t=e.i(221628),s=e.i(55956),a=e.i(891115),r=e.i(365571);e.s(["SearchIcon",()=>r.default],383692);var r=r,i=e.i(416340),n=e.i(843778),l=e.i(874311),o=e.i(844048);let c=e=>{let t=Number(e);return""!==e&&Number.isFinite(t)?t:e};e.s(["ChartHighlightActions",0,({chartHighlight:e,updateDateRange:u,actions:m,chartId:d})=>{let{left:h,right:p,clearHighlight:f}=e??{},[_,g]=(0,i.useState)(!!e?.popoverPosition),y=(0,o.useFormatDateTime)();(0,i.useEffect)(()=>{g(!!e?.popoverPosition)},[e?.popoverPosition]);let v=h&&p&&f?{start:h,end:p,clear:f,chartId:d}:void 0,b=(0,i.useMemo)(()=>{if(!u||!v)return[];let e=10>(0,s.default)(v.end).diff((0,s.default)(v.start),"minutes");return[{id:"zoom-in",label:"Zoom in",icon:(0,t.jsx)(r.default,{className:"text-foreground-lighter",size:12}),rightSlot:e?(0,t.jsx)("span",{className:"text-xs",children:"Min. 10 minutes"}):null,isDisabled:()=>e,onSelect:({start:t,end:s,clear:a})=>{e||(u(t,s),a())}}]},[v,u]),S=(0,i.useMemo)(()=>[...b,...m??[]],[b,m]),x=e?.popoverPosition?`${e.popoverPosition.x}-${e.popoverPosition.y}`:"closed";return(0,t.jsxs)(l.DropdownMenu,{open:_,onOpenChange:g,children:[(0,t.jsx)(l.DropdownMenuTrigger,{className:"w-auto p-0",style:{position:"absolute",left:e?.popoverPosition?.x+"px",top:e?.popoverPosition?.y+"px"}}),(0,t.jsxs)(l.DropdownMenuContent,{className:"flex flex-col gap-1 p-1 w-fit text-left data-[state=open]:animate-none! data-[state=closed]:animate-none!",onEscapeKeyDown:()=>f?.(),onInteractOutside:e=>{let t=e.target;t?.closest(".recharts-wrapper")||f?.()},children:[(0,t.jsxs)(l.DropdownMenuLabel,{className:"flex items-center justify-center text-foreground-light font-mono gap-x-2 text-xs",children:[(0,t.jsx)("span",{children:y(c(h),"MMM D, H:mm")}),(0,t.jsx)(a.ArrowRight,{size:10}),(0,t.jsx)("span",{children:y(c(p),"MMM D, H:mm")})]}),(0,t.jsx)(l.DropdownMenuSeparator,{className:"my-0"}),S.map(e=>{let s=!!v&&!!e.isDisabled&&e.isDisabled(v),a=null;a="function"==typeof e.label?v?e.label(v):null:e.label;let r=null;return r="function"==typeof e.rightSlot?v?e.rightSlot(v):null:e.rightSlot??null,(0,t.jsx)(l.DropdownMenuItem,{asChild:!0,disabled:s,className:(0,n.cn)("group"),children:(0,t.jsxs)("button",{disabled:s,tabIndex:-1,onClick:()=>v&&e.onSelect({...v}),className:"w-full flex items-center gap-1.5",children:[e.icon,(0,t.jsx)("span",{className:"grow text-left",children:a}),r]})},e.id)})]})]},x)}],172329);let u=e=>{let t=Number(e);return void 0!==e&&""!==e&&Number.isFinite(t)?(0,s.default)(t):(0,s.default)(e)};e.s(["useChartHighlight",0,function(){let[e,t]=(0,i.useState)(void 0),[s,a]=(0,i.useState)(void 0),[r,n]=(0,i.useState)({left:void 0,right:void 0}),[l,o]=(0,i.useState)(!1),[c,m]=(0,i.useState)(null),[d,h]=(0,i.useState)(void 0),[p,f]=(0,i.useState)(void 0),[_,g]=(0,i.useState)(!1),[y,v]=(0,i.useState)({}),b=()=>{t(void 0),a(void 0),n({left:void 0,right:void 0}),m(null),h(void 0),f(void 0),g(!1),v({})};return{left:e,right:s,coordinates:r,isSelecting:l,popoverPosition:c,handleMouseDown:e=>{b(),e&&e.activeLabel&&(o(!0),g(!1),t(e.activeLabel),a(e.activeLabel),h(e.activeLabel),v({label:e.nextLabel,coordinate:e.nextCoordinate}),n({left:e.coordinates,right:e.coordinates}),"number"==typeof e.chartX&&"number"==typeof e.chartY&&f({x:e.chartX,y:e.chartY}))},handleMouseMove:e=>{if(!l||!e||!e.activeLabel)return;e.activeLabel!==d&&g(!0);let s=u(e.activeLabel),i=u(d);s.isBefore(i)?(t(e.activeLabel),a(d),n({left:e.coordinates,right:r.right})):(a(e.activeLabel),t(d),n({left:r.left,right:e.coordinates}))},handleMouseUp:e=>{l&&(o(!1),h(void 0),!_&&y.label&&(a(y.label),n(e=>({...e,right:y.coordinate}))),p?m(p):"object"==typeof e&&null!==e&&"chartX"in e&&"chartY"in e&&"number"==typeof e.chartX&&"number"==typeof e.chartY&&m({x:e.chartX,y:e.chartY}))},clearHighlight:b}}],338994)},745566,e=>{"use strict";let t=(0,e.i(679709).default)("RefreshCcw",[["path",{d:"M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8",key:"14sxne"}],["path",{d:"M3 3v5h5",key:"1xhq8a"}],["path",{d:"M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16",key:"1hlbsb"}],["path",{d:"M16 16h5v5",key:"ccwih5"}]]);e.s(["RefreshCcw",0,t],745566)},540135,e=>{"use strict";var t=e.i(543661);e.s(["LoaderCircle",()=>t.default])},42592,e=>{"use strict";var t=e.i(337277),s=e.i(847240);e.s(["default",0,function(e){(0,s.default)(1,arguments);var a=(0,t.default)(e);return a.setHours(0,0,0,0),a}])},672296,e=>{"use strict";e.s(["sanitizeArrayOfObjects",0,function(e,t={}){let{maxDepth:s=3,redaction:a="[REDACTED]",truncationNotice:r="[REDACTED: max depth reached]",sensitiveKeys:i=[]}=t,n=new Set(["password","passwd","pwd","pass","secret","token","id_token","access_token","refresh_token","apikey","api_key","api-key","apiKey","key","privatekey","private_key","client_secret","clientSecret","auth","authorization","ssh_key","sshKey","bearer","session","cookie","csrf","xsrf","ip","ip_address","ipAddress","aws_access_key_id","aws_secret_access_key","gcp_service_account_key",...i].map(e=>e.toLowerCase())),l=[{re:/\b(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|1?\d?\d)\b/g,reason:"ip"},{re:/\b(?:[A-Fa-f0-9]{1,4}:){2,7}[A-Fa-f0-9]{1,4}\b/g,reason:"ip6"},{re:/\b(AKI|ASI)A[0-9A-Z]{16}\b/g,reason:"aws_access_key_id"},{re:/\b[0-9A-Za-z/+]{40}\b/g,reason:"aws_secret_access_key_like"},{re:/\bBearer\s+[A-Za-z0-9\-._~+/]+=*\b/g,reason:"bearer"},{re:/\b[A-Za-z0-9-_]+?\.[A-Za-z0-9-_]+?\.[A-Za-z0-9-_]+?\b/g,reason:"jwt_like"},{re:/\b[A-Za-z0-9_\-]{24,64}\b/g,reason:"long_token"}],o=new WeakMap;function c(e){let t=e;for(let{re:e}of l)t=t.replace(e,a);return t}function u(e){return n.has(String(e).toLowerCase())}return e.map(e=>(function e(t,i){if(null==t||"number"==typeof t||"boolean"==typeof t||"bigint"==typeof t)return t;if("string"==typeof t)return c(t);if("function"==typeof t)return"[Function]";if(t instanceof Date)return t.toISOString();if(t instanceof RegExp)return t.toString();if(ArrayBuffer.isView(t)&&!(t instanceof DataView))return`[TypedArray byteLength=${t.byteLength}]`;if(t instanceof ArrayBuffer)return`[ArrayBuffer byteLength=${t.byteLength}]`;if(i>=s)return r;if("object"==typeof t){if(o.has(t))return"[Circular]";if(Array.isArray(t)){let s=[];o.set(t,s);for(let a=0;a<t.length;a++)s[a]=e(t[a],i+1);return s}if(function(e){if(null===e||"object"!=typeof e)return!1;let t=Object.getPrototypeOf(e);return t===Object.prototype||null===t}(t)){let s={};for(let[r,n]of(o.set(t,s),Object.entries(t)))u(r)?s[r]=a:s[r]=e(n,i+1);return s}if(t instanceof Map){let s=[];for(let[r,n]of(o.set(t,s),t.entries())){let t=u(r)?a:e(r,i+1),l=u(r)?a:e(n,i+1);s.push([t,l])}return s}if(t instanceof Set){let s=[];for(let a of(o.set(t,s),t.values()))s.push(e(a,i+1));return s}if(t instanceof URL)return t.toString();if(t instanceof Error){let e={name:t.name,message:c(t.message),stack:r};return o.set(t,e),e}try{return c(String(t))}catch{return c(Object.prototype.toString.call(t))}}return c(String(t))})(e,0))},"sanitizeUrlHashParams",0,function(e){return e.split("#")[0]}])},522014,e=>{"use strict";let t=(0,e.i(679709).default)("CirclePlay",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["polygon",{points:"10 8 16 12 10 16 10 8",key:"1cimsy"}]]);e.s(["default",0,t])},360785,e=>{"use strict";var t=e.i(961082);e.s(["CirclePause",()=>t.default])},859616,e=>{"use strict";var t=e.i(522014);e.s(["CirclePlay",()=>t.default])},482051,708643,e=>{"use strict";var t=e.i(337277),s=e.i(847240);e.s(["default",0,function(e){(0,s.default)(1,arguments);var a=(0,t.default)(e);return a.setHours(23,59,59,999),a}],482051);var a=e.i(416340),r=e.i(739114);e.s(["useCopyToClipboard",0,function(){let[e,t]=(0,a.useState)(null);return{text:e,copy:(0,a.useCallback)(async(e,{timeout:s,withToast:a}={timeout:3e3,withToast:!1})=>{if(!navigator?.clipboard)return console.warn("Clipboard not supported"),!1;try{return await navigator.clipboard.writeText(e),t(e),s&&setTimeout(()=>{t(null)},s),a&&r.toast.success("Copied to clipboard"),!0}catch(e){return console.warn("Copy failed",e),t(null),!1}},[]),isCopied:null!==e}}],708643)},431792,119563,521753,e=>{"use strict";e.s(["safeUnref",0,function(e){return"object"==typeof e&&"function"==typeof e.unref&&e.unref(),e}],431792);let t=["forwarded","-ip","remote-","via","-user"];e.s(["FILTERED_VALUE",0,"[Filtered]","PII_HEADER_SNIPPETS",0,t,"SENSITIVE_COOKIE_NAME_SNIPPETS",0,[".sid","sessid","remember","oidc","pkce","nonce","__secure-","__host-","awsalb","awselb","akamai","__stripe","cognito","firebase","supabase","sb-","mfa","2fa"],"SENSITIVE_KEY_SNIPPETS",0,["auth","token","secret","session","password","passwd","pwd","key","jwt","bearer","sso","saml","csrf","xsrf","credentials","sid","identity","set-cookie","cookie"]],119563),e.s(["defaultPiiToCollectionOptions",0,function(e){return!0===e?{userInfo:!0,cookies:!0,httpHeaders:{request:!0,response:!0},httpBodies:["incomingRequest","outgoingRequest","incomingResponse","outgoingResponse"],queryParams:!0,genAI:{inputs:!0,outputs:!0},stackFrameVariables:!0,frameContextLines:7}:{userInfo:!1,cookies:{deny:t},httpHeaders:{request:{deny:t},response:{deny:t}},httpBodies:[],queryParams:{deny:t},genAI:{inputs:!1,outputs:!1},stackFrameVariables:!0,frameContextLines:7}}],521753)},111410,e=>{e.v(t=>Promise.all(["static/chunks/1hdxs7_ndahtn.js","static/chunks/03k61e2qj-04k.js"].map(t=>e.l(t))).then(()=>t(677146)))},883471,e=>{e.v(t=>Promise.all(["static/chunks/1qmd52kihl9cf.js"].map(t=>e.l(t))).then(()=>t(518769)))},93222,e=>{e.v(t=>Promise.all(["static/chunks/1se_wvhkqa22e.js"].map(t=>e.l(t))).then(()=>t(316114)))},72285,e=>{e.v(t=>Promise.all(["static/chunks/3x29gpn4c9ybp.js"].map(t=>e.l(t))).then(()=>t(124246)))},574510,e=>{e.v(t=>Promise.all(["static/chunks/38vaje5l4jy91.js"].map(t=>e.l(t))).then(()=>t(663678)))},329867,e=>{e.v(t=>Promise.all(["static/chunks/0ajh63ceztfg_.js"].map(t=>e.l(t))).then(()=>t(562380)))},643342,e=>{e.v(t=>Promise.all(["static/chunks/3pq5apva7qvba.js","static/chunks/2835898no9tca.js","static/chunks/2pn7m-gx3j5po.js","static/chunks/2a0fbghovayxg.js","static/chunks/2s4826srfx99s.js","static/chunks/0ng7q3dhy_1c_.js","static/chunks/3n2q5-n8n01q1.js","static/chunks/2zgycll-qz8h8.js","static/chunks/3_dopi65_6_rc.js"].map(t=>e.l(t))).then(()=>t(232258)))},804879,e=>{e.v(t=>Promise.all(["static/chunks/0h5c_svogabk6.js","static/chunks/1cqefnv440d1b.js","static/chunks/0ng7q3dhy_1c_.js","static/chunks/2s4826srfx99s.js"].map(t=>e.l(t))).then(()=>t(199687)))},95833,e=>{e.v(t=>Promise.all(["static/chunks/1m-0rbsmec3rp.js","static/chunks/1d5arkiz_upkk.js"].map(t=>e.l(t))).then(()=>t(142543)))},846537,e=>{e.v(t=>Promise.all(["static/chunks/1vjamdq_ung72.js"].map(t=>e.l(t))).then(()=>t(245201)))},50229,e=>{e.v(t=>Promise.all(["static/chunks/2z7vyoqshnrj1.js"].map(t=>e.l(t))).then(()=>t(331248)))},263652,e=>{e.v(t=>Promise.all(["static/chunks/1o8-9wbfchg2s.js"].map(t=>e.l(t))).then(()=>t(700224)))},822335,e=>{e.v(t=>Promise.all(["static/chunks/386az0fp92rsf.js"].map(t=>e.l(t))).then(()=>t(48216)))},827389,e=>{e.v(t=>Promise.all(["static/chunks/1r8csx0as31rc.js"].map(t=>e.l(t))).then(()=>t(780795)))},306465,e=>{e.v(t=>Promise.all(["static/chunks/2jo02hm2012vs.js"].map(t=>e.l(t))).then(()=>t(84223)))},320810,e=>{e.v(t=>Promise.all(["static/chunks/3tjk5q_c9b0p9.js"].map(t=>e.l(t))).then(()=>t(190529)))},44756,e=>{e.v(t=>Promise.all(["static/chunks/0otghqv_3z977.js"].map(t=>e.l(t))).then(()=>t(411609)))},77572,e=>{e.v(t=>Promise.all(["static/chunks/08ic1wmbdfjm_.js"].map(t=>e.l(t))).then(()=>t(550910)))},299015,e=>{e.v(t=>Promise.all(["static/chunks/28yxv7320--s_.js"].map(t=>e.l(t))).then(()=>t(956403)))},853832,e=>{e.v(t=>Promise.all(["static/chunks/1b_4_oiigc1t6.js"].map(t=>e.l(t))).then(()=>t(523047)))},444444,e=>{e.v(t=>Promise.all(["static/chunks/1m5ppw-y1e27l.js"].map(t=>e.l(t))).then(()=>t(306141)))},89982,e=>{e.v(t=>Promise.all(["static/chunks/1qgx8jp6ysy10.js"].map(t=>e.l(t))).then(()=>t(84181)))},439,e=>{e.v(t=>Promise.all(["static/chunks/08gcgcp5kwdn3.js"].map(t=>e.l(t))).then(()=>t(585967)))},674055,e=>{e.v(t=>Promise.all(["static/chunks/2mzz-bh25yxm0.js"].map(t=>e.l(t))).then(()=>t(659864)))},801894,e=>{e.v(t=>Promise.all(["static/chunks/16tjoouhjshn-.js"].map(t=>e.l(t))).then(()=>t(532683)))},955478,e=>{e.v(t=>Promise.all(["static/chunks/2dgsfc1yw8c81.js"].map(t=>e.l(t))).then(()=>t(946844)))},428597,e=>{e.v(t=>Promise.all(["static/chunks/11pz06byf46c9.js"].map(t=>e.l(t))).then(()=>t(37032)))},578444,e=>{e.v(t=>Promise.all(["static/chunks/14zfccqriuhn5.js"].map(t=>e.l(t))).then(()=>t(221183)))},185608,e=>{e.v(t=>Promise.all(["static/chunks/233v_buu9z-hp.js","static/chunks/2kcryai_ab2km.js"].map(t=>e.l(t))).then(()=>t(79472)))},612314,e=>{e.v(t=>Promise.all(["static/chunks/1u1_g-_52l8uf.js"].map(t=>e.l(t))).then(()=>t(980791)))},660943,e=>{e.v(t=>Promise.all(["static/chunks/3rlayi9bobt5h.js"].map(t=>e.l(t))).then(()=>t(620893)))},214615,e=>{e.v(t=>Promise.all(["static/chunks/2ro7_lvmh8ira.js"].map(t=>e.l(t))).then(()=>t(194742)))},877303,e=>{e.v(t=>Promise.all(["static/chunks/0lwjfiubyz-u4.js"].map(t=>e.l(t))).then(()=>t(85809)))},565731,e=>{e.v(t=>Promise.all(["static/chunks/03w--ov1v6dk9.js"].map(t=>e.l(t))).then(()=>t(846526)))},439954,e=>{e.v(t=>Promise.all(["static/chunks/3gl6agar-x4vl.js"].map(t=>e.l(t))).then(()=>t(399358)))},646193,e=>{e.v(t=>Promise.all(["static/chunks/00wpejzaz-h6u.js"].map(t=>e.l(t))).then(()=>t(270671)))},310666,e=>{e.v(t=>Promise.all(["static/chunks/33hy3fzhjkdpb.js"].map(t=>e.l(t))).then(()=>t(191809)))},38970,e=>{e.v(t=>Promise.all(["static/chunks/29ecibexpmvh3.js","static/chunks/3aaatg0jtwj_7.js","static/chunks/2kcryai_ab2km.js"].map(t=>e.l(t))).then(()=>t(66554)))},68365,e=>{e.v(t=>Promise.all(["static/chunks/1229puywf_j5v.js"].map(t=>e.l(t))).then(()=>t(463955)))},705292,e=>{e.v(t=>Promise.all(["static/chunks/409_xj9ocu51k.js"].map(t=>e.l(t))).then(()=>t(147575)))},930188,e=>{e.v(t=>Promise.all(["static/chunks/21074w-3erwx8.js"].map(t=>e.l(t))).then(()=>t(604919)))},101928,e=>{e.v(t=>Promise.all(["static/chunks/3id63ti833mz1.js"].map(t=>e.l(t))).then(()=>t(846161)))},41375,e=>{e.v(t=>Promise.all(["static/chunks/3nl_aipsxmwof.js"].map(t=>e.l(t))).then(()=>t(834473)))},715733,e=>{e.v(t=>Promise.all(["static/chunks/0-ma2yj5zccq1.js"].map(t=>e.l(t))).then(()=>t(417897)))},268726,e=>{e.v(t=>Promise.all(["static/chunks/21f6z_zl9ur0l.js"].map(t=>e.l(t))).then(()=>t(898187)))},740028,e=>{e.v(t=>Promise.all(["static/chunks/1c6seg34pk9v9.js"].map(t=>e.l(t))).then(()=>t(391060)))},24661,e=>{e.v(t=>Promise.all(["static/chunks/34vzb54fvaftx.js"].map(t=>e.l(t))).then(()=>t(549587)))},134805,e=>{e.v(t=>Promise.all(["static/chunks/0nvzt5flyrpf3.js"].map(t=>e.l(t))).then(()=>t(664336)))},597523,e=>{e.v(t=>Promise.all(["static/chunks/2poufkvdqi4xv.js"].map(t=>e.l(t))).then(()=>t(245099)))},678679,e=>{e.v(t=>Promise.all(["static/chunks/3uopwe6wb_c6-.js"].map(t=>e.l(t))).then(()=>t(404154)))},73751,e=>{e.v(t=>Promise.all(["static/chunks/0_n1jr2sa31pp.js"].map(t=>e.l(t))).then(()=>t(31724)))},909495,e=>{e.v(t=>Promise.all(["static/chunks/087xey1yks57p.js"].map(t=>e.l(t))).then(()=>t(698380)))},548863,e=>{e.v(t=>Promise.all(["static/chunks/0ng7q3dhy_1c_.js","static/chunks/36i83_baztkk7.js"].map(t=>e.l(t))).then(()=>t(79703)))},283398,e=>{e.v(t=>Promise.all(["static/chunks/0tyfrwup8fmqh.js"].map(t=>e.l(t))).then(()=>t(541970)))},274794,e=>{e.v(t=>Promise.all(["static/chunks/0ng7q3dhy_1c_.js","static/chunks/2835898no9tca.js","static/chunks/2s4826srfx99s.js","static/chunks/1_qh9i1n78yr1.js","static/chunks/2yedq3aqou2jo.js"].map(t=>e.l(t))).then(()=>t(571538)))},929825,e=>{e.v(t=>Promise.all(["static/chunks/15iwfh8r79awk.js"].map(t=>e.l(t))).then(()=>t(777403)))},579437,e=>{e.v(t=>Promise.all(["static/chunks/0ng7q3dhy_1c_.js","static/chunks/1dmix9g-45cl2.js","static/chunks/2s4826srfx99s.js","static/chunks/1zqss4mc3qgry.js"].map(t=>e.l(t))).then(()=>t(524943)))},609157,e=>{e.v(t=>Promise.all(["static/chunks/0ng7q3dhy_1c_.js","static/chunks/1hr37xo5mrp0b.js","static/chunks/2s4826srfx99s.js","static/chunks/392oy5whwibgr.js"].map(t=>e.l(t))).then(()=>t(323205)))},150116,e=>{e.v(t=>Promise.all(["static/chunks/154cm0enlcc-s.js"].map(t=>e.l(t))).then(()=>t(763645)))},707643,e=>{e.v(t=>Promise.all(["static/chunks/3ae97t3wgq_au.js","static/chunks/0ng7q3dhy_1c_.js"].map(t=>e.l(t))).then(()=>t(935100)))},467186,e=>{e.v(t=>Promise.all(["static/chunks/1mu65968xpnr6.js"].map(t=>e.l(t))).then(()=>t(6777)))},639206,e=>{e.v(t=>Promise.all(["static/chunks/0m8zy_y6kcll3.js","static/chunks/0p1xycthfcypz.js"].map(t=>e.l(t))).then(()=>t(791713)))},250577,e=>{e.v(t=>Promise.all(["static/chunks/0yxsoqc6gcfn-.js"].map(t=>e.l(t))).then(()=>t(429091)))},610764,e=>{e.v(t=>Promise.all(["static/chunks/10e9s3hac_7m-.js","static/chunks/08swdu02mrojr.js"].map(t=>e.l(t))).then(()=>t(247311)))},818633,e=>{e.v(t=>Promise.all(["static/chunks/3c_kvlp9oe8xe.js","static/chunks/00wqi3r7469-8.js"].map(t=>e.l(t))).then(()=>t(338481)))},859528,e=>{e.v(t=>Promise.all(["static/chunks/0jzwmztyyjiuq.js"].map(t=>e.l(t))).then(()=>t(372475)))},500556,e=>{e.v(t=>Promise.all(["static/chunks/17zrvcwb4p2lk.js","static/chunks/3pq5apva7qvba.js","static/chunks/0ng7q3dhy_1c_.js","static/chunks/2835898no9tca.js","static/chunks/1tfxdckkl6j6_.js","static/chunks/3j4prmmivp08a.js","static/chunks/2-b31ycxqwsaf.js","static/chunks/0r63u1h64hlob.js","static/chunks/3hmgq76vu-31h.js","static/chunks/3m6b3m9ky4mb2.css","static/chunks/2mrj1_z8lxzzb.css"].map(t=>e.l(t))).then(()=>t(321608)))},596207,e=>{e.v(t=>Promise.all(["static/chunks/1a8vzr5t__6ja.js","static/chunks/1lczgejxc4re8.js"].map(t=>e.l(t))).then(()=>t(865243)))},354946,e=>{e.v(t=>Promise.all(["static/chunks/3lgi9i__bhdqy.js","static/chunks/1lczgejxc4re8.js"].map(t=>e.l(t))).then(()=>t(674412)))},943222,e=>{e.v(t=>Promise.all(["static/chunks/3quyy93lxeyil.js"].map(t=>e.l(t))).then(()=>t(140017)))},98740,e=>{e.v(t=>Promise.all(["static/chunks/234se1yvs7k2m.js"].map(t=>e.l(t))).then(()=>t(795776)))},130281,e=>{e.v(t=>Promise.all(["static/chunks/39vsmhgbvr1fs.js"].map(t=>e.l(t))).then(()=>t(10338)))},655992,e=>{e.v(t=>Promise.all(["static/chunks/1364m4rsbifgz.js"].map(t=>e.l(t))).then(()=>t(614956)))},429186,e=>{e.v(t=>Promise.all(["static/chunks/07qdgl4ibpdww.js","static/chunks/3d0zb7pvpjsjn.js","static/chunks/0h5c_svogabk6.js"].map(t=>e.l(t))).then(()=>t(818996)))},488584,e=>{e.v(t=>Promise.all(["static/chunks/02mb5gf6zqlv0.js"].map(t=>e.l(t))).then(()=>t(851420)))},25642,e=>{e.v(t=>Promise.all(["static/chunks/4470vbyyl5s9y.js","static/chunks/3ez8htqmv7i1f.js","static/chunks/1ud9_vz7e79fm.js","static/chunks/0prnegqjoh0z1.js","static/chunks/3i9jjnu9-0sl0.js","static/chunks/0ng7q3dhy_1c_.js","static/chunks/0xfcht05qklg6.js","static/chunks/2s4826srfx99s.js","static/chunks/3hj584b7c5r2k.js"].map(t=>e.l(t))).then(()=>t(207831)))},561602,e=>{e.v(t=>Promise.all(["static/chunks/2nv7-g863erls.js","static/chunks/159f61gw1jkhp.js","static/chunks/3ez8htqmv7i1f.js","static/chunks/0r6zgtqeiw1_m.js"].map(t=>e.l(t))).then(()=>t(326204)))},877114,e=>{e.v(t=>Promise.all(["static/chunks/2dya_or-c_d6_.js"].map(t=>e.l(t))).then(()=>t(812136)))},540007,e=>{e.v(t=>Promise.all(["static/chunks/2hra-yfape_p3.js"].map(t=>e.l(t))).then(()=>t(785951)))},593029,e=>{e.v(t=>Promise.all(["static/chunks/2a5gpmvde5whs.js"].map(t=>e.l(t))).then(()=>t(755497)))},849654,e=>{e.v(t=>Promise.all(["static/chunks/1894oaf3hb5q9.js"].map(t=>e.l(t))).then(()=>t(839941)))},639363,e=>{e.v(t=>Promise.all(["static/chunks/43wc2uupow9kz.js"].map(t=>e.l(t))).then(()=>t(904340)))},425360,e=>{e.v(t=>Promise.all(["static/chunks/2jy3cig86ujm8.js"].map(t=>e.l(t))).then(()=>t(409222)))},548315,e=>{e.v(t=>Promise.all(["static/chunks/33rbxqy07ccpn.js","static/chunks/3ez8htqmv7i1f.js"].map(t=>e.l(t))).then(()=>t(256337)))},661328,e=>{e.v(t=>Promise.all(["static/chunks/2hdcjbm-9mvru.js","static/chunks/3ez8htqmv7i1f.js"].map(t=>e.l(t))).then(()=>t(447400)))},265029,e=>{e.v(t=>Promise.all(["static/chunks/0-mzi0gc97sx6.js"].map(t=>e.l(t))).then(()=>t(289339)))},151872,e=>{e.v(t=>Promise.all(["static/chunks/3o08pfzjci_i7.js"].map(t=>e.l(t))).then(()=>t(865389)))}]);
+
+//# debugId=94db9584-3427-de89-9e34-8b047da51bb7

@@ -1,0 +1,303 @@
+;!function(){try { var e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof global?global:"undefined"!=typeof window?window:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&((e._debugIds|| (e._debugIds={}))[n]="846db96e-6716-67e9-5b6e-4f134f5c1ee4")}catch(e){}}();
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,69998,e=>{"use strict";var t=e.i(221628);e.i(128328);var s=e.i(158639),i=e.i(55956),a=e.i(891115);let r=(0,e.i(679709).default)("Logs",[["path",{d:"M13 12h8",key:"h98zly"}],["path",{d:"M13 18h8",key:"oe0vm4"}],["path",{d:"M13 6h8",key:"15sg57"}],["path",{d:"M3 12h1",key:"lp3yf2"}],["path",{d:"M3 18h1",key:"1eiwyy"}],["path",{d:"M3 6h1",key:"rgxa97"}],["path",{d:"M8 12h1",key:"1con00"}],["path",{d:"M8 18h1",key:"13wk12"}],["path",{d:"M8 6h1",key:"tn6mkg"}]]);var o=e.i(573569),n=e.i(183808),l=e.i(871569),d=e.i(416340),u=e.i(837710),c=e.i(821539),p=e.i(768162),m=e.i(72987),_=e.i(469100),h=e.i(820308),g=e.i(774907),v=e.i(29047),f=e.i(950419),b=e.i(944988),y=e.i(312062),S=e.i(181431),x=e.i(375761),w=e.i(215312);let A=({id:e,title:s,description:i})=>{let[a,r]=(0,d.useState)(null),o=async()=>{let t=`${window.location.href.split("#")[0]}#${e}`;await (0,x.copyToClipboard)(t),r(e),setTimeout(()=>r(null),2e3)};return(0,t.jsxs)("div",{className:"flex flex-col gap-1 mb-4 group",children:[(0,t.jsxs)("div",{className:"flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity",onClick:o,children:[(0,t.jsx)("h3",{className:"text-foreground text-lg font-medium",children:s}),(0,t.jsx)(w.ButtonTooltip,{variant:"text",icon:a===e?(0,t.jsx)(y.Check,{size:14}):(0,t.jsx)(S.Link,{size:14}),className:"w-7 h-7 opacity-0 group-hover:opacity-100 transition-opacity",tooltip:{content:{side:"bottom",text:a===e?"Link copied!":"Copy link to section"}}})]}),(0,t.jsx)("p",{className:"text-foreground-light text-sm",children:i})]})};var T=e.i(932291),$=e.i(797691),P=e.i(748356),O=e.i(979377),E=e.i(448710),q=e.i(212846),j=e.i(460186),k=e.i(513826),I=e.i(930504),L=e.i(654894),N=e.i(417403),R=e.i(554344),C=e.i(562616),M=e.i(323203);let U=Object.entries({anonymous_provider_disabled:{description:"Anonymous sign-ins are disabled."},bad_code_verifier:{description:"Returned from the PKCE flow where the provided code verifier does not match the expected one. Indicates a bug in the implementation of the client library."},bad_json:{description:"Usually used when the HTTP body of the request is not valid JSON."},bad_oauth_callback:{description:"OAuth callback from provider to Auth does not have all the required attributes (state). Indicates an issue with the OAuth provider or client library implementation."},bad_oauth_state:{description:"OAuth state (data echoed back by the OAuth provider to Supabase Auth) is not in the correct format. Indicates an issue with the OAuth provider integration."},captcha_failed:{description:"CAPTCHA challenge could not be verified with the CAPTCHA provider. Check your CAPTCHA integration."},conflict:{description:"General database conflict, such as concurrent requests on resources that should not be modified concurrently. Can often occur when you have too many session refresh requests firing off at the same time for a user."},email_address_invalid:{description:"Example and test domains are currently not supported. Use a different email address."},email_address_not_authorized:{description:"Email sending is not allowed for this address as your project is using the default SMTP service. Set up a custom SMTP provider to send to external addresses."},email_conflict_identity_not_deletable:{description:"Unlinking this identity causes the user's account to change to an email address which is already used by another user account."},email_not_confirmed:{description:"Signing in is not allowed for this user as the email address is not confirmed."},email_provider_disabled:{description:"Signups are disabled for email and password."},flow_state_expired:{description:"PKCE flow state to which the API request relates has expired. Ask the user to sign in again."},flow_state_not_found:{description:"PKCE flow state no longer exists or was destroyed by a previous request. Ask the user to sign in again."},hook_payload_invalid_content_type:{description:"Payload from Auth does not have a valid Content-Type header."},hook_payload_over_size_limit:{description:"Payload from Auth exceeds maximum size limit."},hook_timeout:{description:"Unable to reach hook within maximum time allocated."},hook_timeout_after_retry:{description:"Unable to reach hook after maximum number of retries."},identity_already_exists:{description:"The identity to which the API relates is already linked to a user."},identity_not_found:{description:"Identity to which the API call relates does not exist, such as when an identity is unlinked or deleted."},insufficient_aal:{description:"The user must have a higher Authenticator Assurance Level to call this API. Ask them to solve an MFA challenge."},invalid_credentials:{description:"Login credentials or grant type not recognized."},manual_linking_disabled:{description:"Calling the supabase.auth.linkUser() and related APIs is not enabled on the Auth server."},mfa_challenge_expired:{description:"Responding to an MFA challenge took too long. Request a new challenge."},mfa_factor_name_conflict:{description:"MFA factors for a single user should not have the same friendly name."},mfa_factor_not_found:{description:"MFA factor no longer exists."},mfa_ip_address_mismatch:{description:"The enrollment process for MFA factors must begin and end with the same IP address."},mfa_phone_enroll_not_enabled:{description:"Enrollment of MFA Phone factors is disabled."},mfa_phone_verify_not_enabled:{description:"Login via Phone factors and verification of new Phone factors is disabled."},mfa_totp_enroll_not_enabled:{description:"Enrollment of MFA TOTP factors is disabled."},mfa_totp_verify_not_enabled:{description:"Login via TOTP factors and verification of new TOTP factors is disabled."},mfa_verification_failed:{description:"MFA challenge could not be verified due to a wrong TOTP code."},mfa_verification_rejected:{description:"Further MFA verification is rejected due to a hook decision."},mfa_verified_factor_exists:{description:"Verified phone factor already exists for a user. Unenroll it to continue."},mfa_web_authn_enroll_not_enabled:{description:"Enrollment of MFA Web Authn factors is disabled."},mfa_web_authn_verify_not_enabled:{description:"Login via WebAuthn factors and verification of new WebAuthn factors is disabled."},no_authorization:{description:"This HTTP request requires an Authorization header, which is missing."},oauth_provider_not_supported:{description:"Using an OAuth provider which is disabled on the Auth server."},otp_disabled:{description:"Sign in with OTPs (magic link, email OTP) is disabled."},otp_expired:{description:"OTP code has expired. Ask the user to sign in again."},over_email_send_rate_limit:{description:"Too many emails have been sent to this address. Ask the user to wait."},over_request_rate_limit:{description:"Too many requests have been sent by this client. Ask the user to try again later."},over_sms_send_rate_limit:{description:"Too many SMS messages have been sent to this phone number. Ask the user to wait."},phone_not_confirmed:{description:"Signing in is not allowed for this user as the phone number is not confirmed."},phone_provider_disabled:{description:"Signups are disabled for phone and password."},provider_disabled:{description:"OAuth provider is disabled for use. Check configuration."},provider_email_needs_verification:{description:"OAuth provider does not verify emails. A verification email has been sent."},reauthentication_needed:{description:"A user must reauthenticate to change their password."},reauthentication_not_valid:{description:"Reauthentication failed. The code is incorrect."},refresh_token_already_used:{description:"Refresh token has been revoked and is outside the reuse interval."},refresh_token_not_found:{description:"Session containing the refresh token not found."},request_timeout:{description:"Processing the request took too long. Retry the request."},same_password:{description:"New password must be different from the current password."},saml_assertion_no_email:{description:"SAML assertion did not contain an email address."},saml_assertion_no_user_id:{description:"SAML assertion did not contain a required user ID (NameID)."},saml_entity_id_mismatch:{description:"Entity ID in SAML update does not match the database. Create a new provider instead."},saml_idp_already_exists:{description:"SAML identity provider already exists."},saml_idp_not_found:{description:"SAML identity provider not found."},saml_metadata_fetch_failed:{description:"Failed to fetch metadata from the provided URL for SAML provider."},saml_provider_disabled:{description:"Enterprise SSO with SAML 2.0 is not enabled on the Auth server."},saml_relay_state_expired:{description:"SAML relay state expired. Ask the user to sign in again."},saml_relay_state_not_found:{description:"SAML relay state no longer exists. Ask the user to sign in again."},session_expired:{description:"Session has expired due to inactivity or time limit."},session_not_found:{description:"Session no longer exists. Possibly deleted or user signed out."},signup_disabled:{description:"Sign ups (new account creation) are disabled on the server."},single_identity_not_deletable:{description:"Every user must have at least one identity attached. Cannot delete the only identity."},sms_send_failed:{description:"Sending an SMS message failed. Check SMS provider configuration."},sso_domain_already_exists:{description:"Only one SSO domain can be registered per identity provider."},sso_provider_not_found:{description:"SSO provider not found. Check the signInWithSSO arguments."},too_many_enrolled_mfa_factors:{description:"A user can only have a limited number of enrolled MFA factors."},unexpected_audience:{description:"The request's X-JWT-AUD claim does not match the JWT's audience."},unexpected_failure:{description:"Auth service is degraded or a bug occurred without a specific reason."},user_already_exists:{description:"User with this email or phone cannot be created again as it already exists."},user_banned:{description:"User is banned until the banned_until field is cleared."},user_sso_managed:{description:"Certain fields of an SSO user cannot be updated, like email."},validation_failed:{description:"Provided parameters are not in the expected format."},weak_password:{description:"Password does not meet the required strength criteria."}}).map(([e,t])=>({key:e,description:t.description})),D=C.safeSql`COALESCE(JSON_VALUE(event_message, "$.provider"), 'unknown') as provider,`,J=C.safeSql`COALESCE(JSON_VALUE(f.event_message, "$.provider"), 'unknown') as provider,`,F=C.safeSql`, provider`,B=C.safeSql``;function V(e,t){return e?t?J:D:B}function G(e){return e?F:B}function H(e){let t=[];if(e?.status_code){let s=M.SAFE_COMPARISON_OPERATOR_SQL[e.status_code.operator];t.push(C.safeSql`response.status_code ${s} ${(0,C.analyticsLiteral)(e.status_code.value)}`)}return 0===t.length?B:C.safeSql`AND ${(0,C.joinSqlFragments)(t," AND ")}`}function Z(e,t){return{granularity:M.SAFE_GRANULARITY_SQL[(0,M.analyticsIntervalToGranularity)(e)],filterSql:function(e){let t=[];if(e?.status_code){let s=M.SAFE_COMPARISON_OPERATOR_SQL[e.status_code.operator];t.push(C.safeSql`response.status_code ${s} ${(0,C.analyticsLiteral)(e.status_code.value)}`)}if(e?.provider&&e.provider.length>0){let s=(0,C.joinSqlFragments)(e.provider.map(C.analyticsLiteral),", ");t.push(C.safeSql`JSON_VALUE(event_message, "$.provider") IN (${s})`)}return 0===t.length?B:C.safeSql`AND ${(0,C.joinSqlFragments)(t," AND ")}`}(t),groupByProvider:!!(t?.provider&&t.provider.length>0)}}let z={ActiveUsers:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --active-users
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!0)}
+          count(distinct json_value(f.event_message, "$.auth_event.actor_id")) as count
+        from auth_logs f
+        where json_value(f.event_message, "$.auth_event.action") in (
+          'login', 'user_signedup', 'token_refreshed', 'user_modified',
+          'user_recovery_requested', 'user_reauthenticate_requested'
+        )
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},SignInAttempts:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --sign-in-attempts
+        SELECT
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!1)}
+          CASE
+            WHEN JSON_VALUE(event_message, "$.provider") IS NOT NULL
+                AND JSON_VALUE(event_message, "$.provider") != ''
+            THEN CONCAT(
+              JSON_VALUE(event_message, "$.login_method"),
+              ' (',
+              JSON_VALUE(event_message, "$.provider"),
+              ')'
+            )
+            ELSE JSON_VALUE(event_message, "$.login_method")
+          END as login_type_provider,
+          COUNT(*) as count
+        FROM
+          auth_logs
+        WHERE
+          JSON_VALUE(event_message, "$.action") = 'login'
+          AND JSON_VALUE(event_message, "$.metering") = "true"
+          ${i}
+        GROUP BY
+          timestamp, login_type_provider${G(a)}
+        ORDER BY
+          timestamp desc, login_type_provider${G(a)}
+      `},PasswordResetRequests:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --password-reset-requests
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!0)}
+          count(*) as count
+        from auth_logs f
+        where json_value(f.event_message, "$.auth_event.action") = 'user_recovery_requested'
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},TotalSignUps:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --total-signups
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!1)}
+          count(*) as count
+        from auth_logs
+        where json_value(event_message, "$.auth_event.action") = 'user_signedup'
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},SignInProcessingTimeBasic:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --signin-processing-time-basic
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!1)}
+          count(*) as count,
+          round(avg(cast(json_value(event_message, "$.duration") as int64)) / 1000000, 2) as avg_processing_time_ms,
+          round(min(cast(json_value(event_message, "$.duration") as int64)) / 1000000, 2) as min_processing_time_ms,
+          round(max(cast(json_value(event_message, "$.duration") as int64)) / 1000000, 2) as max_processing_time_ms
+        from auth_logs
+        where json_value(event_message, "$.auth_event.action") = 'login'
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},SignInProcessingTimePercentiles:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --signin-processing-time-percentiles
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!1)}
+          count(*) as count,
+          round(approx_quantiles(cast(json_value(event_message, "$.duration") as int64), 100)[offset(50)] / 1000000, 2) as p50_processing_time_ms,
+          round(approx_quantiles(cast(json_value(event_message, "$.duration") as int64), 100)[offset(95)] / 1000000, 2) as p95_processing_time_ms,
+          round(approx_quantiles(cast(json_value(event_message, "$.duration") as int64), 100)[offset(99)] / 1000000, 2) as p99_processing_time_ms
+        from auth_logs
+        where json_value(event_message, "$.auth_event.action") = 'login'
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},SignUpProcessingTimeBasic:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --signup-processing-time-basic
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!1)}
+          count(*) as count,
+          round(avg(cast(json_value(event_message, "$.duration") as int64)) / 1000000, 2) as avg_processing_time_ms,
+          round(min(cast(json_value(event_message, "$.duration") as int64)) / 1000000, 2) as min_processing_time_ms,
+          round(max(cast(json_value(event_message, "$.duration") as int64)) / 1000000, 2) as max_processing_time_ms
+        from auth_logs
+        where json_value(event_message, "$.auth_event.action") = 'user_signedup'
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},SignUpProcessingTimePercentiles:(e,t)=>{let{granularity:s,filterSql:i,groupByProvider:a}=Z(e,t);return C.safeSql`
+        --signup-processing-time-percentiles
+        select
+          timestamp_trunc(timestamp, ${s}) as timestamp,
+          ${V(a,!1)}
+          count(*) as count,
+          round(approx_quantiles(cast(json_value(event_message, "$.duration") as int64), 100)[offset(50)] / 1000000, 2) as p50_processing_time_ms,
+          round(approx_quantiles(cast(json_value(event_message, "$.duration") as int64), 100)[offset(95)] / 1000000, 2) as p95_processing_time_ms,
+          round(approx_quantiles(cast(json_value(event_message, "$.duration") as int64), 100)[offset(99)] / 1000000, 2) as p99_processing_time_ms
+        from auth_logs
+        where json_value(event_message, "$.auth_event.action") = 'user_signedup'
+        ${i}
+        group by timestamp${G(a)}
+        order by timestamp desc${G(a)}
+      `},ErrorsByStatus:(e,t)=>{let s=M.SAFE_GRANULARITY_SQL[(0,M.analyticsIntervalToGranularity)(e)],i=H(t);return C.safeSql`
+        --auth-errors-by-status
+  select
+    timestamp_trunc(timestamp, ${s}) as timestamp,
+    count(*) as count,
+    response.status_code
+  from edge_logs
+    cross join unnest(metadata) as m
+    cross join unnest(m.request) as request
+    cross join unnest(m.response) as response
+    cross join unnest(response.headers) as h
+  where path like '%auth/v1%'
+    and response.status_code >= 400 and response.status_code <= 599
+    ${i}
+  group by timestamp, status_code
+  order by timestamp desc
+      `},ErrorsByAuthCode:(e,t)=>{let s=M.SAFE_GRANULARITY_SQL[(0,M.analyticsIntervalToGranularity)(e)],i=H(t);return C.safeSql`
+        --auth-errors-by-code
+  select
+    timestamp_trunc(timestamp, ${s}) as timestamp,
+    count(*) as count,
+    h.x_sb_error_code as error_code
+  from edge_logs
+    cross join unnest(metadata) as m
+    cross join unnest(m.request) as request
+    cross join unnest(m.response) as response
+    cross join unnest(response.headers) as h
+  where path like '%auth/v1%'
+    and response.status_code >= 400 and response.status_code <= 599
+    ${i}
+  group by timestamp, error_code
+  order by timestamp desc
+      `}},K={minute:C.safeSql`toUnixTimestamp(toStartOfMinute(timestamp)) * 1000000`,hour:C.safeSql`toUnixTimestamp(toStartOfHour(timestamp)) * 1000000`,day:C.safeSql`toUnixTimestamp(toStartOfDay(timestamp)) * 1000000`},Y=C.safeSql`coalesce(nullIf(JSONExtractString(event_message, 'provider'), ''), 'unknown') as provider,`;function W(e){if(e?.status_code){let t=M.SAFE_COMPARISON_OPERATOR_SQL[e.status_code.operator];return C.safeSql`AND toInt32OrZero(log_attributes['response.status_code']) ${t} ${(0,C.analyticsLiteral)(e.status_code.value)}`}return B}function Q(e,t){return{ts:K[(0,M.analyticsIntervalToGranularity)(e)],filterSql:function(e){if(e?.provider&&e.provider.length>0){let t=(0,C.joinSqlFragments)(e.provider.map(C.analyticsLiteral),", ");return C.safeSql`AND JSONExtractString(event_message, 'provider') IN (${t})`}return B}(t),groupByProvider:!!(t?.provider&&t.provider.length>0)}}let X={ActiveUsers:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --active-users (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count(distinct JSONExtractString(event_message, 'auth_event', 'actor_id')) as count
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') in (
+            'login', 'user_signedup', 'token_refreshed', 'user_modified',
+            'user_recovery_requested', 'user_reauthenticate_requested'
+          )
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},SignInAttempts:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --sign-in-attempts (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          case
+            when JSONExtractString(event_message, 'provider') != ''
+            then concat(
+              JSONExtractString(event_message, 'login_method'),
+              ' (',
+              JSONExtractString(event_message, 'provider'),
+              ')'
+            )
+            else JSONExtractString(event_message, 'login_method')
+          end as login_type_provider,
+          count() as count
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'action') = 'login'
+          and JSONExtractString(event_message, 'metering') = 'true'
+        ${i}
+        group by ${s}, login_type_provider${G(a)}
+        order by ${s} desc, login_type_provider${G(a)}
+      `},PasswordResetRequests:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --password-reset-requests (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count() as count
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') = 'user_recovery_requested'
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},TotalSignUps:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --total-signups (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count() as count
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') = 'user_signedup'
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},SignInProcessingTimeBasic:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --signin-processing-time-basic (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count() as count,
+          round(avg(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as avg_processing_time_ms,
+          round(min(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as min_processing_time_ms,
+          round(max(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as max_processing_time_ms
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') = 'login'
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},SignInProcessingTimePercentiles:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --signin-processing-time-percentiles (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count() as count,
+          round(quantile(0.5)(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as p50_processing_time_ms,
+          round(quantile(0.95)(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as p95_processing_time_ms,
+          round(quantile(0.99)(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as p99_processing_time_ms
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') = 'login'
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},SignUpProcessingTimeBasic:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --signup-processing-time-basic (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count() as count,
+          round(avg(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as avg_processing_time_ms,
+          round(min(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as min_processing_time_ms,
+          round(max(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as max_processing_time_ms
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') = 'user_signedup'
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},SignUpProcessingTimePercentiles:(e,t)=>{let{ts:s,filterSql:i,groupByProvider:a}=Q(e,t);return C.safeSql`
+        --signup-processing-time-percentiles (otel)
+        select
+          ${s} as timestamp,
+          ${a?Y:B}
+          count() as count,
+          round(quantile(0.5)(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as p50_processing_time_ms,
+          round(quantile(0.95)(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as p95_processing_time_ms,
+          round(quantile(0.99)(toInt64OrZero(JSONExtractString(event_message, 'duration'))) / 1000000, 2) as p99_processing_time_ms
+        from logs
+        where source = 'auth_logs'
+          and JSONExtractString(event_message, 'auth_event', 'action') = 'user_signedup'
+        ${i}
+        group by ${s}${G(a)}
+        order by ${s} desc${G(a)}
+      `},ErrorsByStatus:(e,t)=>{let s=K[(0,M.analyticsIntervalToGranularity)(e)],i=W(t);return C.safeSql`
+        --auth-errors-by-status (otel)
+        select
+          ${s} as timestamp,
+          count() as count,
+          toInt32OrZero(log_attributes['response.status_code']) as status_code
+        from logs
+        where source = 'edge_logs'
+          and log_attributes['request.path'] like '%auth/v1%'
+          and toInt32OrZero(log_attributes['response.status_code']) between 400 and 599
+        ${i}
+        group by ${s}, status_code
+        order by ${s} desc
+      `},ErrorsByAuthCode:(e,t)=>{let s=K[(0,M.analyticsIntervalToGranularity)(e)],i=W(t);return C.safeSql`
+        --auth-errors-by-code (otel)
+        select
+          ${s} as timestamp,
+          count() as count,
+          log_attributes['response.headers.x_sb_error_code'] as error_code
+        from logs
+        where source = 'edge_logs'
+          and log_attributes['request.path'] like '%auth/v1%'
+          and toInt32OrZero(log_attributes['response.status_code']) between 400 and 599
+        ${i}
+        group by ${s}, error_code
+        order by ${s} desc
+      `}};function ee(e,t,s=!1){let i=N.default.object({result:N.default.array(N.default.object({timestamp:N.default.coerce.number()}).catchall(N.default.any()))}).parse(e).result;if(!i)return{data:void 0,chartAttributes:t};if(!s)return{data:Array.from(new Set(i.map(e=>String(e.timestamp)))).sort().map(e=>{let s={timestamp:e};return t.forEach(e=>{s[e.attribute]=0}),i.filter(t=>String(t.timestamp)===e).forEach(e=>{t.forEach(t=>{if("login_type_provider"in t&&e.login_type_provider!==t.login_type_provider||"providerType"in t&&e.provider!==t.providerType)return;let i="number"==typeof e[t.attribute]?e[t.attribute]:"number"==typeof e.count?e.count:void 0;"number"==typeof i&&(s[t.attribute]=(s[t.attribute]??0)+i)})}),s}),chartAttributes:t};{let e=new Set;i.forEach(t=>{t.provider&&e.add(t.provider)});let s=[];return e.forEach(e=>{t.forEach(t=>{s.push({...t,attribute:`${t.attribute}_${e}`,label:`${t.label} (${e})`})})}),{data:Array.from(new Set(i.map(e=>String(e.timestamp)))).sort().map(e=>{let t={timestamp:e};return s.forEach(e=>{t[e.attribute]=0}),i.filter(t=>String(t.timestamp)===e).forEach(e=>{s.forEach(s=>{let i=s.attribute.split("_").slice(0,-1).join("_"),a=s.attribute.split("_").slice(-1)[0];if(e.provider!==a)return;let r="number"==typeof e[i]?e[i]:"number"==typeof e.count?e.count:void 0;"number"==typeof r&&(t[s.attribute]=(t[s.attribute]??0)+r)})}),t}),chartAttributes:s}}}var et=e.i(156442),es=e.i(368136),ei=e.i(194125);let ea=()=>(0,t.jsx)(_.default,{children:(0,t.jsx)(eo,{})});ea.getLayout=e=>(0,t.jsx)(E.DefaultLayout,{children:(0,t.jsx)(q.default,{title:"Auth",children:e})});let er="Auth",eo=()=>{let{ref:e}=(0,s.useParams)(),_="auth-report",{selectedDateRange:y,updateDateRange:S,datePickerValue:x,datePickerHelpers:w,showUpgradePrompt:E,setShowUpgradePrompt:q,handleDatePickerChange:C}=(0,et.useReportDateRange)(h.REPORT_DATERANGE_HELPER_LABELS.LAST_60_MINUTES),{data:D,error:J,isLoading:F,refetch:B,isRefetching:V,filters:G,addFilter:H,removeFilters:Z,isLoadingData:K,sql:Y}=(0,f.useSharedAPIReport)({filterBy:"auth",start:y?.period_start?.date,end:y?.period_end?.date}),[W,Q]=(0,d.useState)(!1),[ea,eo]=(0,d.useState)(!1),[en,el]=(0,l.useQueryState)("monitoring_status_code",(0,l.parseAsJson)(T.numericFilterSchema.parse)),[ed,eu]=(0,l.useQueryState)("usage_provider",(0,l.parseAsJson)($.selectFilterSchema.parse)),ec=(({projectRef:e,startDate:t,endDate:s,interval:i,filters:a,useOtel:r=!1})=>{let o=!!(a?.provider&&a.provider.length>0),n=r?X:z;return[{id:"active-user",label:"Auth Activity",valuePrecision:0,hide:!1,showTooltip:!0,showLegend:!1,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"Users who generated any Auth event in this period. This metric tracks authentication activity, not total product usage. Some active users won't appear here if their session stayed valid.",dataProvider:async()=>{let l=n.ActiveUsers(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"ActiveUsers",provider:"logs",label:"Auth Activity",enabled:!0}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}},{id:"sign-in-attempts",label:"Sign In Attempts by Type",valuePrecision:0,hide:!1,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"The total number of sign in attempts by type.",dataProvider:async()=>{let l=n.SignInAttempts(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"SignInAttempts",provider:"logs",label:"Password",login_type_provider:"password",enabled:!0},{attribute:"SignInAttempts",provider:"logs",label:"PKCE",login_type_provider:"pkce",enabled:!0},{attribute:"SignInAttempts",provider:"logs",label:"Refresh Token",login_type_provider:"token",enabled:!0},{attribute:"SignInAttempts",provider:"logs",label:"ID Token",login_type_provider:"id_token",enabled:!0}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}},{id:"signups",label:"Sign Ups",valuePrecision:0,hide:!1,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"The total number of sign ups.",dataProvider:async()=>{let l=n.TotalSignUps(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"TotalSignUps",provider:"logs",label:"Sign Ups",enabled:!0}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}},{id:"password-reset-requests",label:"Password Reset Requests",valuePrecision:0,hide:!1,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"The total number of password reset requests.",dataProvider:async()=>{let l=n.PasswordResetRequests(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"PasswordResetRequests",provider:"logs",label:"Password Reset Requests",enabled:!0}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}}]})({projectRef:e||"",startDate:y?.period_start?.date,endDate:y?.period_end?.date,interval:y?.interval,filters:{provider:ed}}),ep=(({projectRef:e,startDate:t,endDate:s,interval:i,filters:a,useOtel:r=!1})=>{let o=r?X:z;return[{id:"auth-errors",label:"API Gateway Auth Errors",valuePrecision:0,hide:!1,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"The total number of auth errors by status code from the API Gateway.",dataProvider:async()=>{let n=o.ErrorsByStatus(i,a),l=await (0,M.fetchLogs)(e,n,t,s,r);if(!l?.result)return{data:[],query:n};let d=(0,R.extractStatusCodesFromData)(l.result),u=(0,R.generateStatusCodeAttributes)(d);return{data:(0,R.transformStatusCodeData)(l.result,d),attributes:u,query:n}}},{id:"auth-errors-by-code",label:"Auth Errors by Code",valuePrecision:0,hide:!1,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"The total number of auth errors by Supabase Auth error code from the API Gateway.",dataProvider:async()=>{let n=o.ErrorsByAuthCode(i,a),l=await (0,M.fetchLogs)(e,n,t,s,r);if(!l?.result)return{data:[],query:n};let d=N.default.array(N.default.object({error_code:N.default.string().nullish()}).catchall(N.default.unknown())).parse(l.result),u=Array.from(new Set(d.map(e=>e.error_code).filter(e=>null!=e))).sort(),c=u.map(e=>({attribute:e,label:e,tooltip:U.find(t=>t.key===e)?.description}));return{data:(0,R.transformCategoricalCountData)(d,"error_code",u),attributes:c,query:n}}}]})({projectRef:e||"",startDate:y?.period_start?.date,endDate:y?.period_end?.date,interval:y?.interval,filters:{status_code:en}}),em=(({projectRef:e,startDate:t,endDate:s,interval:i,filters:a,useOtel:r=!1})=>{let o=!!(a?.provider&&a.provider.length>0),n=r?X:z;return[{id:"sign-in-processing-time-basic",label:"Sign In Processing Time",valuePrecision:2,hide:!1,hideHighlightedValue:!0,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"Basic processing time metrics for sign in operations within the auth server (excludes network latency).",dataProvider:async()=>{let l=n.SignInProcessingTimeBasic(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"avg_processing_time_ms",label:"Avg. Processing Time (ms)"},{attribute:"min_processing_time_ms",label:"Min. Processing Time (ms)"},{attribute:"max_processing_time_ms",label:"Max. Processing Time (ms)"}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}},{id:"sign-in-processing-time-percentiles",label:"Sign In Processing Time Percentiles",valuePrecision:2,hide:!1,hideHighlightedValue:!0,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"Percentile processing time metrics for sign in operations within the auth server (excludes network latency).",entitlement:"auth",requiredPlan:"Pro",dataProvider:async()=>{let l=n.SignInProcessingTimePercentiles(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"p50_processing_time_ms",label:"P50 Processing Time (ms)"},{attribute:"p95_processing_time_ms",label:"P95 Processing Time (ms)"},{attribute:"p99_processing_time_ms",label:"P99 Processing Time (ms)"}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}},{id:"sign-up-processing-time-basic",label:"Sign Up Processing Time",valuePrecision:2,hide:!1,hideHighlightedValue:!0,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"Basic processing time metrics for sign up operations within the auth server (excludes network latency).",dataProvider:async()=>{let l=n.SignUpProcessingTimeBasic(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"avg_processing_time_ms",label:"Avg. Processing Time (ms)"},{attribute:"min_processing_time_ms",label:"Min. Processing Time (ms)"},{attribute:"max_processing_time_ms",label:"Max. Processing Time (ms)"}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}},{id:"sign-up-processing-time-percentiles",label:"Sign Up Processing Time Percentiles",valuePrecision:2,hide:!1,hideHighlightedValue:!0,showTooltip:!0,showLegend:!0,showMaxValue:!1,hideChartType:!1,defaultChartStyle:"line",titleTooltip:"Percentile processing time metrics for sign up operations within the auth server (excludes network latency).",entitlement:"auth",requiredPlan:"Pro",dataProvider:async()=>{let l=n.SignUpProcessingTimePercentiles(i,a),d=ee(await (0,M.fetchLogs)(e,l,t,s,r),[{attribute:"p50_processing_time_ms",label:"P50 Processing Time (ms)"},{attribute:"p95_processing_time_ms",label:"P95 Processing Time (ms)"},{attribute:"p99_processing_time_ms",label:"P99 Processing Time (ms)"}],o);return{data:d.data,attributes:d.chartAttributes,query:l}}}]})({projectRef:e||"",startDate:y?.period_start?.date,endDate:y?.period_end?.date,interval:y?.interval,filters:{}}),e_=(0,et.useRefreshHandler)(x,w,C,async()=>{y&&(Q(!0),B(),setTimeout(()=>Q(!1),1e3))});(0,ei.useShortcut)(es.SHORTCUT_IDS.OBSERVABILITY_REFRESH,e_,{enabled:!W}),(0,ei.useShortcut)(es.SHORTCUT_IDS.OBSERVABILITY_TOGGLE_DATE_PICKER,()=>{eo(e=>!e)});let eh=(0,n.useRouter)(),eg=[{id:"api-gateway-logs",label:"Open in API Gateway Logs",icon:(0,t.jsx)(r,{size:12}),onSelect:({start:t,end:s,chartId:i})=>{let a=`/project/${e}/logs/edge-logs?its=${t}&ite=${s}`;i?.includes("errors")?a+='&f={"product":{"auth":true},"status_code":{"error":true,"warning":true}}':a+='&f={"product":{"auth":true}}',eh.push(a)}},{id:"auth-logs",label:"Open in Auth Logs",icon:(0,t.jsx)(r,{size:12}),onSelect:({start:t,end:s})=>{let i=`/project/${e}/logs/auth-logs?its=${t}&ite=${s}`;eh.push(i)}}];return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(m.default,{title:er,showDatabaseSelector:!1}),(0,t.jsx)(g.default,{content:(0,t.jsx)("div",{className:"flex flex-col gap-2 w-full",children:(0,t.jsxs)("div",{className:"ml-auto flex items-center gap-2 flex-wrap",children:[(0,t.jsx)(k.DocsButton,{href:c.OBSERVABILITY_DOCS_HREFS.auth,topic:er}),(0,t.jsx)(L.ShortcutTooltip,{shortcutId:es.SHORTCUT_IDS.OBSERVABILITY_REFRESH,label:"Refresh report",side:"bottom",children:(0,t.jsx)(u.Button,{variant:"default",disabled:W,icon:(0,t.jsx)(o.RefreshCw,{className:W?"animate-spin":""}),className:"w-7",onClick:e_})}),(0,t.jsx)(j.ReportSettings,{chartId:_}),(0,t.jsx)(P.LogsDatePicker,{onSubmit:C,value:x,helpers:w,open:ea,onOpenChange:eo,shortcutId:es.SHORTCUT_IDS.OBSERVABILITY_TOGGLE_DATE_PICKER}),(0,t.jsx)(O.default,{show:E,setShowUpgradePrompt:q,title:"Report date range",description:"Report data can be stored for a maximum of 3 months depending on the plan that your project is on.",source:"authReportDateRange"}),y&&(0,t.jsxs)("div",{className:"flex items-center gap-x-2 text-xs",children:[(0,t.jsx)("p",{className:"text-foreground-light",children:(0,i.default)(y.period_start.date).format("MMM D, h:mma")}),(0,t.jsx)("p",{className:"text-foreground-light",children:(0,t.jsx)(a.ArrowRight,{size:12})}),(0,t.jsx)("p",{className:"text-foreground-light",children:(0,i.default)(y.period_end.date).format("MMM D, h:mma")})]})]})}),children:(0,t.jsxs)("div",{className:"mt-8 flex flex-col gap-8 pb-8",children:[(0,t.jsxs)("div",{className:"flex flex-col gap-4",id:"usage",children:[(0,t.jsxs)("div",{children:[(0,t.jsx)(A,{id:"usage",title:"Usage",description:"Monitor user activity, sign-ins, sign-ups, and password reset requests to understand how users interact with your authentication system."}),(0,t.jsx)($.ReportsSelectFilter,{label:"Provider",options:[{label:"Email",value:"email"},{label:"Google",value:"google"},{label:"Apple",value:"apple"},{label:"Phone",value:"phone"},{label:"Discord",value:"discord"},{label:"Azure",value:"azure"},{label:"GitHub",value:"github"},{label:"Kakao",value:"kakao"},{label:"TOTP",value:"totp"},{label:"Twitter",value:"twitter"},{label:"SAML",value:"saml"},{label:"Recovery",value:"recovery"},{label:"SSO/SAML",value:"sso/saml"},{label:"Magic link",value:"magiclink"},{label:"Keycloak",value:"keycloak"},{label:"Facebook",value:"facebook"},{label:"Twitch",value:"twitch"},{label:"LinkedIn OIDC",value:"linkedin_oidc"},{label:"Spotify",value:"spotify"},{label:"Email Change",value:"email_change"},{label:"Snapchat",value:"snapchat"},{label:"WorkOS",value:"workos"},{label:"Notion",value:"notion"},{label:"Slack OIDC",value:"slack_oidc"},{label:"Figma",value:"figma"},{label:"GitLab",value:"gitlab"},{label:"LinkedIn",value:"linkedin"},{label:"Zoom",value:"zoom"}],value:ed||[],onChange:eu,isLoading:W,showSearch:!0})]}),(0,t.jsx)("div",{className:"grid md:grid-cols-2 gap-4",children:ec.map(s=>(0,t.jsx)(b.ReportChartV2,{report:s,projectRef:e,interval:y.interval,startDate:y?.period_start?.date,endDate:y?.period_end?.date,updateDateRange:S,syncId:_,filters:{provider:ed},highlightActions:eg},`${s.id}`))})]}),(0,t.jsxs)("div",{className:"flex flex-col gap-4",id:"monitoring",children:[(0,t.jsxs)("div",{children:[(0,t.jsx)(A,{id:"monitoring",title:"Monitoring",description:"Track authentication errors by status code and error type to identify issues and improve user experience."}),(0,t.jsx)(T.ReportsNumericFilter,{label:"Status Code",value:en,onChange:el,defaultOperator:"=",isLoading:W})]}),(0,t.jsx)("div",{className:"grid md:grid-cols-2 gap-4",children:ep.map(s=>(0,t.jsx)(b.ReportChartV2,{report:s,projectRef:e,interval:y.interval,startDate:y?.period_start?.date,endDate:y?.period_end?.date,updateDateRange:S,syncId:_,filters:{status_code:en},highlightActions:eg},`${s.id}`))})]}),(0,t.jsxs)("div",{className:"flex flex-col gap-4",id:"performance",children:[(0,t.jsx)(A,{id:"performance",title:"Performance",description:"Monitor sign-in and sign-up performance metrics including average, percentiles, and request counts to ensure optimal authentication speed."}),(0,t.jsx)("div",{className:"grid md:grid-cols-2 gap-4",children:em.map(s=>(0,t.jsx)(b.ReportChartV2,{report:s,projectRef:e,interval:y.interval,startDate:y?.period_start?.date,endDate:y?.period_end?.date,updateDateRange:S,syncId:_,filters:{},highlightActions:eg},`${s.id}`))})]}),(0,t.jsxs)("div",{children:[(0,t.jsxs)("div",{className:"mb-4 space-y-4",children:[(0,t.jsx)(A,{id:"auth-api-gateway",title:"Auth API Gateway",description:"Monitor user activity, sign-ins, sign-ups, and password reset requests to understand how users interact with your authentication system."}),(0,t.jsx)(p.default,{filters:G,onAddFilter:H,onRemoveFilters:Z,isLoading:K||V,hideDatepicker:!0,datepickerHelpers:w,selectedProduct:"auth",showDatabaseSelector:!1})]}),(0,t.jsx)(v.SharedAPIReport,{data:D,error:J,isLoading:F,isRefetching:V,sql:Y})]})]})}),(0,t.jsx)("div",{className:"pb-8",children:(0,t.jsx)(I.ObservabilityLink,{})})]})};e.s(["default",0,ea],69998)},77306,(e,t,s)=>{let i="/project/[ref]/observability/auth";(window.__NEXT_P=window.__NEXT_P||[]).push([i,()=>e.r(69998)]),t.hot&&t.hot.dispose(function(){window.__NEXT_P.push([i])})}]);
+
+//# debugId=846db96e-6716-67e9-5b6e-4f134f5c1ee4
